@@ -10,9 +10,9 @@
 </style>
 
 <article>
-    <h1>We&rsquo;ll be back soon!</h1>
+    <h1>Nous reviendrons bientôt!</h1>
     <div>
-        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
-        <p>&mdash; The Team</p>
+        <p>Désolé pour la gêne occasionnée, mais nous effectuons actuellement une maintenance. Si vous en avez besoin, vous pouvez toujours<a href="mailto:mayess.info@gmail.com">nous contacter</a> , sinon nous serons de retour en ligne sous peu!</p>
+        <p>&mdash; Centre de transfert de courrier.</p>
     </div>
 </article>
