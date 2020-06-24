@@ -12,7 +12,7 @@
 <article>
     <h1>Nous reviendrons bientôt!</h1>
     <div>
-        <p>Désolé pour la gêne occasionnée, mais nous effectuons actuellement une maintenance.
+        <p>Désolé pour la gêne occasionnée, mais nous effectuons actuellement une maintenance.<br/>
             Si vous en avez besoin, vous pouvez toujours<a href="mailto:mayess.info@gmail.com"> nous contacter</a> , sinon nous serons de retour en ligne sous peu!</p>
         <p>&mdash; Centre de transfert de courrier.</p>
     </div>
