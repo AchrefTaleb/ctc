@@ -42,6 +42,7 @@ class LoginController extends Controller
         $user = auth()->user();
         if($user->hasRole('backoffice')){
             return route('backoffice.home');
+
         }
     }
 }
