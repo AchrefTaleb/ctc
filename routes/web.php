@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('under');
+   // return view('under');
+  return  redirect()->route('login');
 });
+
+//Route::get('/roles','DefaultController@roles');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::prefix('backoffice')->namespace('BackOffice')->middleware(['auth','backoffice'])->group(function(){
+    Route::get('/','HomeController@index')->name('backoffice.home');
+});
+
+
