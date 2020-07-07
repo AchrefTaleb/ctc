@@ -1,4 +1,27 @@
-
+@import "variables";
 @import "loader.css";
 @import "~bootstrap/scss/bootstrap";
 @import "plugins.css";
+
+/*
+  #### OVVERWRITE
+*/
+
+.table > thead > tr > th{
+  color: $yellow;
+}
+
+.btn-warning{
+  background-color: $yellow;
+}
+
+.badge {
+
+  font-size: 100%;
+
+}
+
+.style-3.table-hover:not(.table-dark) tbody tr:hover .table-controls li.warning svg {
+  color: $yellow;
+  fill: rgba(245, 167, 0, 0.219608);
+}

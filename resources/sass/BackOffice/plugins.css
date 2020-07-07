@@ -10,3 +10,13 @@
 
 */
 @import '../../js/BackOffice/plugins/assets/highlight/styles/monokai-sublime.css';
+
+@import "../../js/BackOffice/plugins/assets/table/datatable/datatables.css";
+
+@import "../../js/BackOffice/plugins/assets/table/datatable/custom_dt_multiple_tables.css";
+@import "../../js/BackOffice/plugins/assets/table/datatable/dt-global_style.css";
+@import "../../js/BackOffice/plugins/assets/table/datatable/custom_dt_custom.css";
+
+
+
+

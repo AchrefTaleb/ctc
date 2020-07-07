@@ -25,6 +25,9 @@ Auth::routes();
 
 Route::prefix('backoffice')->namespace('BackOffice')->middleware(['auth','backoffice'])->group(function(){
     Route::get('/','HomeController@index')->name('backoffice.home');
+    Route::get('/staff','StaffController@list')->name('backoffice.staff.list');
+    Route::get('/staff/create','StaffController@formCreate')->name('backoffice.staff.createform');
+    Route::post('/staff/store','StaffController@create')->name('backoffice.staff.store');
 });
 
 
