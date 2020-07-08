@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Staff;
+use App\Client;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class StaffPolicy
+class ClientPolicy
 {
     use HandlesAuthorization;
 
@@ -18,7 +18,7 @@ class StaffPolicy
      */
     public function viewAny(User $user)
     {
-        if ($user->can('staff-list')) {
+        if ($user->can('client-list')) {
             return true;
         }
 
@@ -29,12 +29,16 @@ class StaffPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Staff  $staff
+     * @param  \App\Client  $client
      * @return mixed
      */
-    public function view(User $user, Staff $staff)
+    public function view(User $user, Client $client)
     {
-        //
+        if ($user->can('client-list')) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -45,8 +49,7 @@ class StaffPolicy
      */
     public function create(User $user)
     {
-
-        if ($user->can('staff-create')) {
+        if ($user->can('client-create')) {
             return true;
         }
 
@@ -57,12 +60,12 @@ class StaffPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Staff  $staff
+     * @param  \App\Client  $client
      * @return mixed
      */
-    public function update(User $user, Staff $staff)
+    public function update(User $user, Client $client)
     {
-        if ($user->can('staff-update')) {
+        if ($user->can('client-update')) {
             return true;
         }
 
@@ -73,12 +76,12 @@ class StaffPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Staff  $staff
+     * @param  \App\Client  $client
      * @return mixed
      */
-    public function delete(User $user, Staff $staff)
+    public function delete(User $user, Client $client)
     {
-        if ($user->can('staff-delete')) {
+        if ($user->can('client-delete')) {
             return true;
         }
 
@@ -89,10 +92,10 @@ class StaffPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Staff  $staff
+     * @param  \App\Client  $client
      * @return mixed
      */
-    public function restore(User $user, Staff $staff)
+    public function restore(User $user, Client $client)
     {
         //
     }
@@ -101,10 +104,10 @@ class StaffPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Staff  $staff
+     * @param  \App\Client  $client
      * @return mixed
      */
-    public function forceDelete(User $user, Staff $staff)
+    public function forceDelete(User $user, Client $client)
     {
         //
     }

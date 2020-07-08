@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Staff;
+use App\CategoryMail;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class StaffPolicy
+class CategoryMailPolicy
 {
     use HandlesAuthorization;
 
@@ -18,7 +18,7 @@ class StaffPolicy
      */
     public function viewAny(User $user)
     {
-        if ($user->can('staff-list')) {
+        if ($user->can('categorymail-list')) {
             return true;
         }
 
@@ -29,12 +29,16 @@ class StaffPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Staff  $staff
+     * @param  \App\CategoryMail  $categoryMail
      * @return mixed
      */
-    public function view(User $user, Staff $staff)
+    public function view(User $user, CategoryMail $categoryMail)
     {
-        //
+        if ($user->can('categorymail-list')) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -45,54 +49,41 @@ class StaffPolicy
      */
     public function create(User $user)
     {
-
-        if ($user->can('staff-create')) {
-            return true;
-        }
-
-        return false;
+        //
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Staff  $staff
+     * @param  \App\CategoryMail  $categoryMail
      * @return mixed
      */
-    public function update(User $user, Staff $staff)
+    public function update(User $user, CategoryMail $categoryMail)
     {
-        if ($user->can('staff-update')) {
-            return true;
-        }
-
-        return false;
+        //
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Staff  $staff
+     * @param  \App\CategoryMail  $categoryMail
      * @return mixed
      */
-    public function delete(User $user, Staff $staff)
+    public function delete(User $user, CategoryMail $categoryMail)
     {
-        if ($user->can('staff-delete')) {
-            return true;
-        }
-
-        return false;
+        //
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Staff  $staff
+     * @param  \App\CategoryMail  $categoryMail
      * @return mixed
      */
-    public function restore(User $user, Staff $staff)
+    public function restore(User $user, CategoryMail $categoryMail)
     {
         //
     }
@@ -101,10 +92,10 @@ class StaffPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Staff  $staff
+     * @param  \App\CategoryMail  $categoryMail
      * @return mixed
      */
-    public function forceDelete(User $user, Staff $staff)
+    public function forceDelete(User $user, CategoryMail $categoryMail)
     {
         //
     }

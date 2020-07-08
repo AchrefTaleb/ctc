@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BackOffice;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StaffRequest;
+use App\Http\Requests\StaffUpdateRequest;
 use App\Staff;
 use App\User;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class StaffController extends Controller
 
             $staffs = User::role('staff')->get();
 
-            return view('backoffice.pages.staff-list',[
+            return view('backoffice.pages.staff.staff-list',[
                "staffs" => $staffs,
             ]);
 
@@ -28,7 +29,7 @@ class StaffController extends Controller
     {
         $this->authorize('staff-create', Staff::class);
 
-        return view('backoffice.pages.staff-create');
+        return view('backoffice.pages.staff.staff-create');
 
     }
 
@@ -37,106 +38,49 @@ class StaffController extends Controller
         $this->authorize('create', Staff::class);
 
         $req = $request->all();
-        $req['password4444444444444
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        '] = Hash::make('password');
-        $user =d Staff::create($req);
+        $req['password'] = Hash::make('password');
+        $user = Staff::create($req);
+        $user->refresh();
+        $user = User::find($user->id);
+
+        $user->assignRole('backoffice');
+        $user->assignRole('staff');
+
 
        return back()->with('success','Votre utilisateur à etait enregistrer!');
+    }
+
+
+    public function FormUpdate(Staff $user)
+    {
+
+
+        return view('backoffice.pages.staff.staff-update',[
+            'staff' => $user
+        ]);
+    }
+
+    public function update(StaffUpdateRequest $request)
+    {
+        $staff = Staff::findOrFail($request->post('id'));
+
+        $staff->update($request->only(['name','last_name','email','phone','adresse']));
+
+        return back()->with('success','Votre utilisateur à etait modifier!');
+    }
+
+    public function delete(Request $request)
+    {
+
+        $this->validate($request,[
+            'id' => 'required',
+        ]);
+
+        $user = User::findOrFail($request->post('id'));
+        $user->roles()->detach();
+        $user->delete();
+
+        return back()->with('success','Votre utilisateur à etait supprimer!');
+
     }
 }
