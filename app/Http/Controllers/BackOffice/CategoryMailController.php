@@ -16,7 +16,7 @@ class CategoryMailController extends Controller
 
         $categories = CategoryMail::all();
 
-        return view('backoffice.pages.category-mail.index',[
+        return view('BackOffice.pages.category-mail.index',[
             "categories" => $categories,
         ]);
 

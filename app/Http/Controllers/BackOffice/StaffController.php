@@ -19,7 +19,7 @@ class StaffController extends Controller
 
             $staffs = User::role('staff')->get();
 
-            return view('backoffice.pages.staff.staff-list',[
+            return view('BackOffice.pages.staff.staff-list',[
                "staffs" => $staffs,
             ]);
 
@@ -29,7 +29,7 @@ class StaffController extends Controller
     {
         $this->authorize('staff-create', Staff::class);
 
-        return view('backoffice.pages.staff.staff-create');
+        return view('BackOffice.pages.staff.staff-create');
 
     }
 
@@ -55,7 +55,7 @@ class StaffController extends Controller
     {
 
 
-        return view('backoffice.pages.staff.staff-update',[
+        return view('BackOffice.pages.staff.staff-update',[
             'staff' => $user
         ]);
     }

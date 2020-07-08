@@ -18,7 +18,7 @@ class ClientController extends Controller
 
         $clients = User::role('client')->get();
 
-        return view('backOffice.pages.client.client-list',[
+        return view('BackOffice.pages.client.client-list',[
             "clients" => $clients,
         ]);
 
@@ -28,7 +28,7 @@ class ClientController extends Controller
     {
         $this->authorize('client-create', Client::class);
 
-        return view('backoffice.pages.client.client-create');
+        return view('BackOffice.pages.client.client-create');
 
     }
 
@@ -53,7 +53,7 @@ class ClientController extends Controller
     {
 
 
-        return view('backoffice.pages.client.client-update',[
+        return view('BackOffice.pages.client.client-update',[
             'client' => $user
         ]);
     }
