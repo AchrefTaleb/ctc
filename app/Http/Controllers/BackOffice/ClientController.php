@@ -18,7 +18,7 @@ class ClientController extends Controller
 
         $clients = User::role('client')->get();
 
-        return view('backoffice.pages.client.client-list',[
+        return view('backoffice/pages/client/client-list',[
             "clients" => $clients,
         ]);
 
