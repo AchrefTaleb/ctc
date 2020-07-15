@@ -21,6 +21,7 @@ class MailController extends Controller
 
     public function list()
     {
+        // add filter
         $this->authorize('mail-list', Mail::class);
 
         $mails = Mail::where('trash',false)->orderBy('created_at','desc')->get();
