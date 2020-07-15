@@ -71,3 +71,21 @@ div.dataTables_wrapper div.dataTables_info {
   line-height: 1.25;
   color: $yellow;
 }
+
+span.mb-4.select2-container--default{
+  margin-bottom: unset !important;
+}
+
+/*
+.select2-container--open .select2-dropdown--below{
+  background: $yellow;
+  color: white;
+}
+*/
+
+.infobox-3{
+  margin-top: 45px;
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
+}

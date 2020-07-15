@@ -6,6 +6,10 @@ require('./plugins/assets/font-icons/feather/feather.min');
 require('./plugins/assets/table/datatable/button-ext/dataTables.buttons');
 require('./plugins/assets/table/datatable/button-ext/buttons.html5');
 require('./plugins/assets/sweetalerts/promise-polyfill');
+require('./plugins/assets/select2/select2.min');
+//require('./plugins/assets/notification/snackbar/snackbar.min');
+//require('./plugins/components/notification/custom-snackbar');
+
 
 
 
@@ -38,4 +42,5 @@ jQuery(document).ready(function() {
 });
 
 require('./plugins/custom');
+
 

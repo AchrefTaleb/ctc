@@ -1,6 +1,8 @@
 @import url('main.css');
 @import url('../../js/BackOffice/plugins/assets/perfect-scrollbar/perfect-scrollbar.css');
 @import url('structure.css');
+@import url('elements/infobox.css');
+@import url('elements/avatar.css');
 /*
     Importing highlight.js CSS code
 
@@ -21,6 +23,10 @@
 
 @import "../../js/BackOffice/plugins/assets/sweetalerts/sweetalert2.min.css";
 @import "components/custom-sweetalert.css";
+
+@import "../../js/BackOffice/plugins/assets/select2/select2.min.css";
+
+@import "../../js/BackOffice/plugins/assets/notification/snackbar/snackbar.min.css";
 
 
 

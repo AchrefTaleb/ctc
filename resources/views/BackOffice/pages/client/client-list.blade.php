@@ -88,21 +88,3 @@
     </div>
 @endsection
 
-
-@section('script')
-
-    @if ($message = Session::get('success'))
-
-        <script>
-            document.addEventListener('DOMContentLoaded', (event) => {
-                swal.fire({
-                    title: 'Good job!',
-                    text: "{{ $message }}",
-                    type: 'success',
-                    padding: '2em'
-                });
-            });
-        </script>
-
-    @endif
-@endsection

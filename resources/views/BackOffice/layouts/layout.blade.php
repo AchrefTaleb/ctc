@@ -70,7 +70,7 @@
     <div id="content" class="main-content">
         <div class="layout-px-spacing">
 
-            <div class="row layout-top-spacing">
+            <div id="appV" class="row layout-top-spacing">
 
                 @yield('content')
             </div>
@@ -86,7 +86,29 @@
 <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
 
 <script src="{{ asset('js/BackOffice/app.js') }}" defer></script>
+@if ($message = Session::get('success'))
 
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            /*      swal.fire({
+                    title: 'Good job!',
+                    text: "{{ $message }}",
+                    type: 'success',
+                    padding: '2em'
+                });*/
+
+
+            Snackbar.show({
+                text: '{{ $message }}',
+                actionTextColor: '#fff',
+                backgroundColor: '#8dbf42',
+                pos: 'top-right'
+            });
+
+        });
+    </script>
+
+@endif
 @yield('script')
 
 </body>

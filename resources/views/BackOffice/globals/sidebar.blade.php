@@ -31,7 +31,7 @@
             </li>
 
             <li class="menu">
-                <a href="#Couriels" data-toggle="collapse"  @if(Route::currentRouteName() == 'backoffice.categorymail.list') aria-expanded="true" data-active="true"   @else aria-expanded="false" data-active="false"  @endif class="dropdown-toggle">
+                <a href="#Couriels" data-toggle="collapse"  @if( (Route::currentRouteName() == 'backoffice.categorymail.list')||(Route::currentRouteName() == 'backoffice.mail.list') || (Route::currentRouteName() == 'backoffice.mail.list.trash')) aria-expanded="true" data-active="true"   @else aria-expanded="false" data-active="false"  @endif class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>                        <span>Couriels</span>
                     </div>
@@ -39,9 +39,15 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </div>
                 </a>
-                <ul class="collapse submenu list-unstyled  @if(Route::currentRouteName() == 'backoffice.categorymail.list') show  @endif " id="Couriels" data-parent="#accordionExample">
+                <ul class="collapse submenu list-unstyled  @if((Route::currentRouteName() == 'backoffice.categorymail.list')||(Route::currentRouteName() == 'backoffice.mail.list') || (Route::currentRouteName() == 'backoffice.mail.list.trash')) show  @endif " id="Couriels" data-parent="#accordionExample">
                     <li>
                         <a href="{{ route('backoffice.categorymail.list') }}"> Catégories </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backoffice.mail.list') }}"> Courriers </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('backoffice.mail.list.trash') }}"> Corbiel</a>
                     </li>
 
                 </ul>

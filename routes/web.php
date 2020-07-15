@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/default','DefaultController@roles');
 Route::get('/', function () {
    // return view('under');
   return  redirect()->route('login');
@@ -60,6 +61,23 @@ Route::prefix('backoffice')->namespace('BackOffice')->middleware(['auth','backof
     Route::post('/categorie/store','CategoryMailController@create')->name('backoffice.categorymail.create');
     Route::post('/categorie/delete','CategoryMailController@delete')->name('backoffice.categorymail.delete');
     Route::post('/categorie/update','CategoryMailController@update')->name('backoffice.categorymail.update');
+
+    /*
+     *
+     * Mails routes
+     *
+     */
+
+    Route::get('/mail','MailController@list')->name('backoffice.mail.list');
+    Route::get('/mail/{mail}/update','MailController@updateForm')->name('backoffice.mail.updateform');
+    Route::get('/trash','MailController@trashList')->name('backoffice.mail.list.trash');
+    Route::get('/mail/show/{mail}','MailController@show')->name('backoffice.mail.show');
+    Route::get('mail/create','MailController@createForm')->name('backoffice.mail.createform');
+    Route::post('mail/store','MailController@create')->name('backoffice.mail.store');
+    Route::post('mail/items/store','MailController@itemsStore')->name('backoffice.mail.items.store');
+    Route::post('mail/delete','MailController@delete')->name('backoffice.mail.delete');
+    Route::post('mail/trash','MailController@trash')->name('backoffice.mail.trash');
+    Route::post('mail/restore','MailController@restore')->name('backoffice.mail.restore');
 
 });
 

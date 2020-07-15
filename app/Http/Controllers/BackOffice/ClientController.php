@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Client;
 use App\Http\Requests\ClientRequest;
 use App\Http\Requests\ClientUpdateRequest;
+use App\Mail\newUserMail;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class ClientController extends Controller
 {
@@ -32,6 +34,7 @@ class ClientController extends Controller
 
     }
 
+
     public function create(ClientRequest $request)
     {
         $this->authorize('create', Client::class);
@@ -44,6 +47,7 @@ class ClientController extends Controller
         $user->assignRole('client');
         $user->assignRole('frontoffice');
 
+       Mail::to($user->email)->send(new newUserMail($user)) ;
 
         return back()->with('success','Votre utilisateur à etait enregistrer!');
     }

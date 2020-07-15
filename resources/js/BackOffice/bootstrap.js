@@ -10,7 +10,10 @@ try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
    // window.dragula = require('dragula/dragula');
+    window.Vue = require('vue');
+    window.axios = require('axios/index');
     window.swal = require('sweetalert2');
+    window.Snackbar  = require('./plugins/assets/notification/snackbar/snackbar.min');
     require('bootstrap');
 } catch (e) {}
 
