@@ -19,6 +19,15 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
+           //
+            if(\auth()->user()->hasRole('frontoffice'))
+            {
+                return redirect()->route('frontoffice.home');
+            }
+            if(\auth()->user()->hasRole('backoffice'))
+            {
+                return redirect()->route('backoffice.home');
+            }
             return redirect(RouteServiceProvider::HOME);
         }
 

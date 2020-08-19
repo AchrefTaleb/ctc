@@ -26,7 +26,7 @@
     </style>
 
     @yield('style')
-
+    @yield('add_head')
 </head>
 <body>
 <!-- BEGIN LOADER -->
@@ -64,7 +64,7 @@
     <div class="search-overlay"></div>
 
     <!--  BEGIN SIDEBAR  -->
-@include('BackOffice.globals.sidebar')
+@include('FrontOffice.globals.sidebar')
 <!--  END SIDEBAR  -->
 
     <!--  BEGIN CONTENT PART  -->
@@ -77,7 +77,7 @@
             </div>
 
         </div>
-        @include('BackOffice.globals.footer')
+        @include('FrontOffice.globals.footer')
     </div>
     <!--  END CONTENT PART  -->
 

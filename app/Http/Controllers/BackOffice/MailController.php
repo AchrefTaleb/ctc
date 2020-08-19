@@ -10,6 +10,7 @@ use App\Http\Requests\MailRequest;
 use App\Item;
 use App\Mail;
 use App\User;
+use App\Request as Req;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -38,6 +39,17 @@ class MailController extends Controller
         $mails = Mail::where('trash',true)->orderBy('created_at','desc')->get();
 
         return view('BackOffice.pages.mail.mail-trash',[
+            "mails" => $mails,
+        ]);
+    }
+
+    public function archiveList()
+    {
+        $this->authorize('mail-list', Mail::class);
+
+        $mails = Mail::where('archive',true)->orderBy('created_at','desc')->get();
+
+        return view('BackOffice.pages.mail.mail-archive',[
             "mails" => $mails,
         ]);
     }
@@ -193,5 +205,103 @@ class MailController extends Controller
         $mail->save();
 
         return back()->with('success','Votre Courrier à etait restaurer!');
+    }
+
+    public function archive(Request $request)
+    {
+        $this->authorize('mail-archive', Mail::class);
+
+        $this->validate($request,[
+            'id' => 'required'
+        ]);
+
+        $mail = Mail::findOrFail($request->post('id'));
+
+        $mail->archive = true;
+
+        $mail->save();
+
+        return back()->with('success','Votre Courrier à deplacer vers l"archive!');
+    }
+
+    public function restore_archive(Request $request)
+    {
+        $this->authorize('mail-trash', Mail::class);
+
+        $this->validate($request,[
+            'id' => 'required'
+        ]);
+
+        $mail = Mail::findOrFail($request->post('id'));
+
+        $mail->archive = false;
+
+        $mail->save();
+
+        return back()->with('success','Votre Courrier à etait restaurer!');
+    }
+
+
+    public function requestList()
+    {
+        $this->authorize('request-list', Req::class);
+
+        $requested = Req::where('status','requested')->get();
+        $approved = Req::where('status','approved')->get();
+        $executed= Req::where('status','executed')->get();
+        $sent= Req::where('status','sent')->get();
+        $canceled= Req::where('status','canceled')->get();
+
+        return view('BackOffice.pages.mail.request',[
+         "requested" => $requested,
+         "approved" => $approved,
+         "executed" => $executed,
+         "sent" => $sent,
+         "canceled" => $canceled
+        ]);
+    }
+
+    public function cancelRequest(Req $request)
+    {
+        $this->authorize('request-update', Req::class);
+
+        $request->status = 'canceled';
+        $request->save();
+
+        return back()->with('success', 'votre demande à etait annuler');
+    }
+
+    public function approveRequest(Request $request)
+    {
+        $this->authorize('request-update', Req::class);
+
+        $this->validate($request,[
+            'request' => 'required',
+            'price' => 'required'
+        ]);
+
+        $req = Req::findOrFail($request->post('request'));
+        $req->price = $request->post('price');
+        $req->status = 'approved';
+        $req->save();
+
+        return back()->with('success','Prix a etait associer pour la demande');
+
+    }
+
+
+    public function sentRequest(Request $request)
+    {
+        $this->authorize('request-update', Req::class);
+        $this->validate($request,[
+            'request' => 'required',
+        ]);
+
+        $req = Req::findOrFail($request->post('request'));
+
+        $req->status = 'sent';
+        $req->save();
+
+        return back()->with('success','Demande marquer comme envoyéess');
     }
 }

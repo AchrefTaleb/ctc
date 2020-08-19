@@ -1,0 +1,3 @@
+
+- subscription ( fixed: 1,3,6,9,12 mois) auto renewal ( desactivation manuel) !!
+- l'expedition de courrier/clois ( multiple )

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\BackOffice;
 
+use App\Helpers\stripeHelper;
 use App\Http\Controllers\Controller;
 use App\Client;
 use App\Http\Requests\ClientRequest;
@@ -47,6 +48,11 @@ class ClientController extends Controller
         $user->assignRole('client');
         $user->assignRole('frontoffice');
 
+        $stripe = new stripeHelper();
+
+        $user = $stripe->addCustomer($user);
+
+       // $user->notify();
        Mail::to($user->email)->send(new newUserMail($user)) ;
 
         return back()->with('success','Votre utilisateur à etait enregistrer!');

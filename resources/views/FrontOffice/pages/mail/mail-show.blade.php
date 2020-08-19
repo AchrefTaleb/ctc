@@ -1,4 +1,4 @@
-@extends('BackOffice.layouts.layout')
+@extends('FrontOffice.layouts.layout')
 
 @section('content')
     <div class="row col-md-12 layout-top-spacing layout-spacing">
@@ -31,13 +31,13 @@
                             <div class=" row col-md-3">
                                 <div class="col-md-12 text-right">
                                     @if(!$mail->trash)
-                                        <form action="{{ route('backoffice.mail.trash') }}" method="post">
+                                        <form action="{{ route('frontoffice.mail.trash') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $mail->id }}">
                                             <button type="submit" class="btn btn-block btn-danger">Deplacer vers corbiel</button>
                                         </form>
                                     @else
-                                        <form action="{{ route('backoffice.mail.restore') }}" method="post">
+                                        <form action="{{ route('frontoffice.mail.restore') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $mail->id }}">
                                             <button type="submit" class="btn btn-block btn-success">Restaurer</button>
@@ -47,13 +47,13 @@
                                 </div>
                                 <div class="col-md-12 text-right">
                                     @if(!$mail->archive)
-                                        <form action="{{ route('backoffice.mail.archive') }}" method="post">
+                                        <form action="{{ route('frontoffice.mail.archive') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $mail->id }}">
-                                            <button type="submit" class="btn btn-block btn-warning">Deplacer vers archive</button>
+                                            <button type="submit" class="btn btn-block btn-warning">Deplacer vers l'archive</button>
                                         </form>
                                     @else
-                                        <form action="{{ route('backoffice.mail.restore_archive') }}" method="post">
+                                        <form action="{{ route('frontoffice.mail.restore_archive') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $mail->id }}">
                                             <button type="submit" class="btn btn-block btn-success">Restaurer</button>

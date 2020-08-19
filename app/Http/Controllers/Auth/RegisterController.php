@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helpers\stripeHelper;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -52,6 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'adresse' => ['required','min:20'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -64,10 +66,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+       $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'adresse' => $data['adresse'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $user->assignRole('client');
+        $user->assignRole('frontoffice');
+
+        $stripe = new stripeHelper();
+
+        $user = $stripe->addCustomer($user);
+
+        return $user;
     }
 }

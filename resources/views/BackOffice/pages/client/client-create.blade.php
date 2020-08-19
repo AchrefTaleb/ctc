@@ -53,10 +53,10 @@
 
                                 @enderror
                             </div>
-
+                            <div class="form-group mb-3">
                                 <textarea type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse" placeholder="Adresse">
                                 </textarea>
-                                    @error('ADRESSE')
+                                    @error('adresse')
 
                                     <small id="" class="form-text  text-danger">{{ $message }}</small>
 
