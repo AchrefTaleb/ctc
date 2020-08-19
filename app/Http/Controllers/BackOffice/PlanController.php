@@ -58,7 +58,7 @@ class PlanController extends Controller
 
        $clients = User::role('client')->get();
 
-        return view('backOffice.pages.plan.custom',
+        return view('BackOffice.pages.plan.custom',
             [
               'clients' => $clients,
             ]
