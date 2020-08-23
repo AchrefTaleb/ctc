@@ -23,12 +23,12 @@
                             <tr>
                                 <th>#</th>
                                 <th>Code</th>
-                                <th>De</th>
-                                <th>Pour</th>
+                                <th>Expéditeur</th>
+                                <th>Destinataire</th>
                                 <th>type</th>
                                 <th>Catégorie</th>
-                                <th>le</th>
-                                <th>description</th>
+                                <th>Date</th>
+                                <th>Description</th>
                                 <th class="no-content">Action</th>
                             </tr>
                             </thead>
@@ -64,11 +64,11 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Demander l'envoi de courrier : {{ $mail->code}}</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Réexpédier le courrier : {{ $mail->code}}</h5>
                                             </div>
                                             <form method="POST"  action="{{ route('frontoffice.mail.request.send') }}">
                                             <div class="modal-body">
-                                                <textarea class="form-control" name="adresse" placeholder="Ssir l'adresse de réception..." required></textarea>
+                                                <textarea class="form-control" name="adresse" placeholder="Saisir l'adresse de destinataire..." required></textarea>
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Fermer</button>

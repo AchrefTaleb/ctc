@@ -8,7 +8,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
-                            <h4 class="float-left">Courrier - Ajout</h4>
+                            <h4 class="float-left">Nouveau courrier</h4>
                         </div>
                         <div class="col-md-12">
                             <hr/>
@@ -20,8 +20,8 @@
                         <form method="POST" action="{{ route('backoffice.mail.store') }}" novalidate>
                             @csrf
                             <div class="form-group mb-3">
-                                <label>De:</label>
-                                <input type="text" class="form-control @error('from') is-invalid @enderror " name="from" placeholder="de" required>
+                                <label>Expéditeur:</label>
+                                <input type="text" class="form-control @error('from') is-invalid @enderror " name="from" placeholder="Expéditeur" required>
 
                                 @error('from')
 
@@ -70,8 +70,7 @@
                             </div>
                             <div class="form-group mb-3">
                             <label>Description:</label>
-                                <textarea rows="3" class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Adresse">
-                                </textarea>
+                                <textarea rows="3" class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Description"></textarea>
                                     @error('description')
 
                                     <small id="" class="form-text  text-danger">{{ $message }}</small>

@@ -34,7 +34,7 @@
                                         <form action="{{ route('frontoffice.mail.trash') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $mail->id }}">
-                                            <button type="submit" class="btn btn-block btn-danger">Deplacer vers corbiel</button>
+                                            <button type="submit" class="btn btn-block btn-danger">Placer dans la corbeille</button>
                                         </form>
                                     @else
                                         <form action="{{ route('frontoffice.mail.restore') }}" method="post">
@@ -50,7 +50,7 @@
                                         <form action="{{ route('frontoffice.mail.archive') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $mail->id }}">
-                                            <button type="submit" class="btn btn-block btn-warning">Deplacer vers l'archive</button>
+                                            <button type="submit" class="btn btn-block btn-warning">Placer dans l'archive</button>
                                         </form>
                                     @else
                                         <form action="{{ route('frontoffice.mail.restore_archive') }}" method="post">

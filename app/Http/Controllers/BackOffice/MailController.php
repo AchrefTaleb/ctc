@@ -108,7 +108,7 @@ class MailController extends Controller
 
         $mail->delete();
 
-        return back()->with('success','Votre Courrier à etait supprimer!');
+        return back()->with('success','Votre courrier à été supprimé!');
     }
 
     public function itemsStore(Request $request)
@@ -187,7 +187,7 @@ class MailController extends Controller
 
         $mail->save();
 
-        return back()->with('success','Votre Courrier à deplacer vers le courbiel!');
+        return back()->with('success','Votre Courrier à été déplacé vers la courbielle!');
     }
 
     public function restore(Request $request)
@@ -204,7 +204,7 @@ class MailController extends Controller
 
         $mail->save();
 
-        return back()->with('success','Votre Courrier à etait restaurer!');
+        return back()->with('success','Votre Courrier à été restauré!');
     }
 
     public function archive(Request $request)
@@ -221,7 +221,7 @@ class MailController extends Controller
 
         $mail->save();
 
-        return back()->with('success','Votre Courrier à deplacer vers l"archive!');
+        return back()->with('success','Votre Courrier à été déplacé vers l"archive!');
     }
 
     public function restore_archive(Request $request)
@@ -238,7 +238,7 @@ class MailController extends Controller
 
         $mail->save();
 
-        return back()->with('success','Votre Courrier à etait restaurer!');
+        return back()->with('success','Votre Courrier à été restauré!');
     }
 
 
@@ -268,7 +268,7 @@ class MailController extends Controller
         $request->status = 'canceled';
         $request->save();
 
-        return back()->with('success', 'votre demande à etait annuler');
+        return back()->with('success', 'Votre demande à été annulée');
     }
 
     public function approveRequest(Request $request)
@@ -285,7 +285,7 @@ class MailController extends Controller
         $req->status = 'approved';
         $req->save();
 
-        return back()->with('success','Prix a etait associer pour la demande');
+        return back()->with('success','Prix associé à la demande avec succès');
 
     }
 
@@ -302,6 +302,6 @@ class MailController extends Controller
         $req->status = 'sent';
         $req->save();
 
-        return back()->with('success','Demande marquer comme envoyéess');
+        return back()->with('success','Demande marquée comme envoyée');
     }
 }

@@ -50,7 +50,7 @@ class MailController extends Controller
 
         $mail->save();
 
-        return back()->with('success','Votre Courrier à deplacer vers le courbiel!');
+        return back()->with('success','Votre Courrier à été deplacé vers la courbielle!');
     }
 
     public function trashList()
@@ -78,7 +78,7 @@ class MailController extends Controller
 
         $mail->save();
 
-        return back()->with('success','Votre Courrier à etait restaurer!');
+        return back()->with('success','Votre Courrier à été restauré!');
     }
 
     public function archive(Request $request)
@@ -95,7 +95,7 @@ class MailController extends Controller
 
         $mail->save();
 
-        return back()->with('success','Votre Courrier à deplacer vers l"archive!');
+        return back()->with('success','Votre Courrier à été deplacé vers l"archive!');
     }
 
     public function archiveList()
@@ -123,7 +123,7 @@ class MailController extends Controller
 
         $mail->save();
 
-        return back()->with('success','Votre Courrier à etait restaurer!');
+        return back()->with('success','Votre Courrier à été restauré!');
     }
 
 
@@ -153,7 +153,7 @@ class MailController extends Controller
         $req->adresse = $request->post('adresse');
         $req->save();
 
-        return back()->with('success','Votre demande a etait sauvgarder!');
+        return back()->with('success','Votre demande a été enregistrée!');
 
     }
 
@@ -163,7 +163,7 @@ class MailController extends Controller
         $request->status = 'canceled';
         $request->save();
 
-        return back()->with('success', 'votre demande à etait annuler');
+        return back()->with('success', 'votre demande à été annulée');
     }
 
     public function requestCheckout(Req $request)
@@ -196,6 +196,6 @@ class MailController extends Controller
             $req->save();
         }
 
-        return redirect()->route('frontoffice.mail.request.list')->with('success','Votre paiemenr de demande d"envoi a etait valider');
+        return redirect()->route('frontoffice.mail.request.list')->with('success','Votre paiement de réexpédition a été validé');
     }
 }

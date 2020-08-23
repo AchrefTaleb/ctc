@@ -55,7 +55,7 @@ class ClientController extends Controller
        // $user->notify();
        Mail::to($user->email)->send(new newUserMail($user)) ;
 
-        return back()->with('success','Votre utilisateur à etait enregistrer!');
+        return back()->with('success','Votre client à été enregistré!');
     }
 
 
@@ -74,7 +74,7 @@ class ClientController extends Controller
 
         $staff->update($request->only(['name','last_name','email','phone']));
 
-        return back()->with('success','Votre utilisateur à etait modifier!');
+        return back()->with('success','Votre client à été modifié!');
     }
 
     public function delete(Request $request)
@@ -87,7 +87,7 @@ class ClientController extends Controller
         $user->roles()->detach();
         $user->delete();
 
-        return back()->with('success','Votre utilisateur à etait supprimer!');
+        return back()->with('success','Votre client à été supprimé!');
 
     }
 }

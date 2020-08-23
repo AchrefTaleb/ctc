@@ -8,7 +8,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
-                            <h4 class="float-left">Liste des demandes</h4>
+                            <h4 class="float-left">Liste des demandes de réexpédition</h4>
                         </div>
                         <div class="col-md-12">
                             <hr/>
@@ -43,7 +43,7 @@
                                         @elseif($request->status == 'approved')
                                             <span class="badge outline-badge-warning">Valider le paiement</span>
                                         @elseif($request->status == 'executed')
-                                            <span class="badge outline-badge-success">Encours</span>
+                                            <span class="badge outline-badge-success">En cours</span>
                                         @elseif($request->status == 'sent')
                                             <span class="badge outline-badge-info">Envoyer</span>
                                         @else
@@ -52,10 +52,10 @@
                                     </div></td>
                                 <td>
                                     @if($request->status == 'requested')
-                                        <button class="btn btn-warning" data-toggle="modal" data-target="#client{{$request->id}}">Ajouter un cout</button>
+                                        <button class="btn btn-warning" data-toggle="modal" data-target="#client{{$request->id}}">Ajouter un coût</button>
                                         <a href="{{ route('backoffice.mail.request.canceling',$request->id) }}" class="button btn btn-danger">Annuler</a>
                                     @elseif($request->status == 'approved')
-                                        <a href="#" class="button btn-warning">procéder au paiement</a>
+                                        <a href="#" class="button btn-warning">Procéder au paiement</a>
                                         <a href="#" class="button btn-danger">Annuler</a>
                                     @elseif($request->status == 'executed')
 
@@ -113,7 +113,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
-                            <h4 class="float-left">Liste des demandes traiter</h4>
+                            <h4 class="float-left">Liste des demandes en cours</h4>
                         </div>
                         <div class="col-md-12">
                             <hr/>
@@ -128,8 +128,8 @@
                                 <th><div class="th-content">Demande</div></th>
                                 <th><div class="th-content">Courrier</div></th>
                                 <th><div class="th-content">Client</div></th>
-                                <th><div class="th-content">adresse</div></th>
-                                <th><div class="th-content th-heading">Price(€)</div></th>
+                                <th><div class="th-content">Adresse</div></th>
+                                <th><div class="th-content th-heading">Prix(€)</div></th>
                                 <th><div class="th-content">Status</div></th>
                                 <th><div class="th-content">Action</div></th>
                             </tr>
@@ -148,7 +148,7 @@
                                         @elseif($request->status == 'approved')
                                             <span class="badge outline-badge-warning">Valider le paiement</span>
                                         @elseif($request->status == 'executed')
-                                            <span class="badge outline-badge-success">Encours</span>
+                                            <span class="badge outline-badge-success">En cours</span>
                                         @elseif($request->status == 'sent')
                                             <span class="badge outline-badge-info">Envoyer</span>
                                         @else
@@ -187,7 +187,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
-                            <h4 class="float-left">Liste des demandes payer</h4>
+                            <h4 class="float-left">Liste des demandes payées</h4>
                         </div>
                         <div class="col-md-12">
                             <hr/>
@@ -202,8 +202,8 @@
                                 <th><div class="th-content">Demande</div></th>
                                 <th><div class="th-content">Courrier</div></th>
                                 <th><div class="th-content">Client</div></th>
-                                <th><div class="th-content">adresse</div></th>
-                                <th><div class="th-content th-heading">Price(€)</div></th>
+                                <th><div class="th-content">Adresse</div></th>
+                                <th><div class="th-content th-heading">Prix(€)</div></th>
                                 <th><div class="th-content">Status</div></th>
                                 <th><div class="th-content">Action</div></th>
                             </tr>
@@ -222,11 +222,11 @@
                                         @elseif($request->status == 'approved')
                                             <span class="badge outline-badge-warning">Valider le paiement</span>
                                         @elseif($request->status == 'executed')
-                                            <span class="badge outline-badge-success">Encours</sp
+                                            <span class="badge outline-badge-success">En cours</sp
                                         @elseif($request->status == 'sent')
                                             <span class="badge outline-badge-info">Envoyer</span>
                                         @else
-                                            <span class="badge outline-badge-danger">Annulé</span>
+                                            <span class="badge outline-badge-danger">Annuler</span>
                                         @endif
                                     </div></td>
                                 <td>
@@ -266,7 +266,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
-                            <h4 class="float-left">Liste des courriers envoyer</h4>
+                            <h4 class="float-left">Liste des courriers envoyés</h4>
                         </div>
                         <div class="col-md-12">
                             <hr/>
@@ -281,8 +281,8 @@
                                 <th><div class="th-content">Demande</div></th>
                                 <th><div class="th-content">Courrier</div></th>
                                 <th><div class="th-content">Client</div></th>
-                                <th><div class="th-content">adresse</div></th>
-                                <th><div class="th-content th-heading">Price(€)</div></th>
+                                <th><div class="th-content">Adresse</div></th>
+                                <th><div class="th-content th-heading">Prix(€)</div></th>
                                 <th><div class="th-content">Status</div></th>
                                 <th><div class="th-content">Action</div></th>
                             </tr>
@@ -301,11 +301,11 @@
                                         @elseif($request->status == 'approved')
                                             <span class="badge outline-badge-warning">Valider le paiement</span>
                                         @elseif($request->status == 'executed')
-                                            <span class="badge outline-badge-success">Encours</span>
+                                            <span class="badge outline-badge-success">En cours</span>
                                         @elseif($request->status == 'sent')
                                             <span class="badge outline-badge-info">Envoyer</span>
                                         @else
-                                            <span class="badge outline-badge-danger">Annulé</span>
+                                            <span class="badge outline-badge-danger">Annuler</span>
                                         @endif
                                     </div></td>
                                 <td>
@@ -356,8 +356,8 @@
                                 <th><div class="th-content">Demande</div></th>
                                 <th><div class="th-content">Courrier</div></th>
                                 <th><div class="th-content">Client</div></th>
-                                <th><div class="th-content">adresse</div></th>
-                                <th><div class="th-content th-heading">Price(€)</div></th>
+                                <th><div class="th-content">Adresse</div></th>
+                                <th><div class="th-content th-heading">Prix(€)</div></th>
                                 <th><div class="th-content">Status</div></th>
                                 <th><div class="th-content">Action</div></th>
                             </tr>
@@ -377,11 +377,11 @@
                                         @elseif($request->status == 'approved')
                                             <span class="badge outline-badge-warning">Valider le paiement</span>
                                         @elseif($request->status == 'executed')
-                                            <span class="badge outline-badge-success">Encours</span>
+                                            <span class="badge outline-badge-success">En cours</span>
                                         @elseif($request->status == 'sent')
                                             <span class="badge outline-badge-info">Envoyer</span>
                                         @else
-                                            <span class="badge outline-badge-danger">Annulé</span>
+                                            <span class="badge outline-badge-danger">Annuler</span>
                                         @endif
                                     </div></td>
                                 <td>

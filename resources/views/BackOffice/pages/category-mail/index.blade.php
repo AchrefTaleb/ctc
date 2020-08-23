@@ -22,8 +22,8 @@
                             <form class="form-inline float-right" method="POST" action="{{ route('backoffice.categorymail.create') }}" novalidate>
                                 @csrf
                                 <div class="form-group mr-2">
-                                    <label class="mr-2">Ajouter nouvelle catégorie de courrier</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror " name="name" placeholder="Nom de catégorie" required>
+                                    <label class="mr-2">Ajouter une nouvelle catégorie de courrier</label>
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror " name="name" placeholder="Nom de la catégorie" required>
 
                                     @error('name')
 

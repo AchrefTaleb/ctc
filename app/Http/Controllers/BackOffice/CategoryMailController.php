@@ -28,7 +28,7 @@ class CategoryMailController extends Controller
 
         $category = CategoryMail::create($request->all());
 
-        return back()->with('success','Votre catégorie à etait enregistrer!');
+        return back()->with('success','Votre catégorie à été enregistrée!');
 
 
     }
@@ -43,7 +43,7 @@ class CategoryMailController extends Controller
 
         $cat->save();
 
-        return back()->with('success','Votre catégorie à etait modifier!');
+        return back()->with('success','Votre catégorie à été modifiée!');
 
 
     }
@@ -60,6 +60,6 @@ class CategoryMailController extends Controller
 
         $cat->delete();
 
-        return back()->with('success','Votre catégorie à etait supprimer!');
+        return back()->with('success','Votre catégorie à été supprimée!');
     }
 }

@@ -34,7 +34,7 @@
                                         <form action="{{ route('backoffice.mail.trash') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $mail->id }}">
-                                            <button type="submit" class="btn btn-block btn-danger">Deplacer vers corbiel</button>
+                                            <button type="submit" class="btn btn-block btn-danger">Déplacer vers la corbeille</button>
                                         </form>
                                     @else
                                         <form action="{{ route('backoffice.mail.restore') }}" method="post">
@@ -50,7 +50,7 @@
                                         <form action="{{ route('backoffice.mail.archive') }}" method="post">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $mail->id }}">
-                                            <button type="submit" class="btn btn-block btn-warning">Deplacer vers archive</button>
+                                            <button type="submit" class="btn btn-block btn-warning">Déplacer vers archive</button>
                                         </form>
                                     @else
                                         <form action="{{ route('backoffice.mail.restore_archive') }}" method="post">

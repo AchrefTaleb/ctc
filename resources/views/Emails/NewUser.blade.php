@@ -10,6 +10,6 @@ Notre équipe a créé un compte pour vous, cliquez sur le bouton ci-dessous pou
 
 Nous sommes heureux que vous rejoigniez notre communauté<br/>
 
-Thanks,<br>
+Merci,<br>
 {{ config('app.name') }}
 @endcomponent

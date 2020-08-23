@@ -61,7 +61,7 @@
 
                         <div class="inv-detail">
                             <div class="info-detail-1">
-                                <p>Cout estimer pour l'envoi</p>
+                                <p>coût estimé pour la réexpédition</p>
                                 <p>{{ $request->price }} €</p>
                             </div>
 

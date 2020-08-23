@@ -22,7 +22,7 @@
                             @csrf
                             <input type="hidden" name="id" value="{{ $staff->id }}">
                             <div class="form-group mb-3">
-                                <input type="text" value="{{ $staff->name }}" class="form-control  @error('name') is-invalid @enderror " name="name" placeholder="prenom" required>
+                                <input type="text" value="{{ $staff->name }}" class="form-control  @error('name') is-invalid @enderror " name="name" placeholder="Prénom" required>
 
                                 @error('name')
 
@@ -31,7 +31,7 @@
                                 @enderror
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" value="{{ $staff->last_name }}" class="form-control @error('last_name') is-invalid @enderror" name="last_name" placeholder="nom">
+                                <input type="text" value="{{ $staff->last_name }}" class="form-control @error('last_name') is-invalid @enderror" name="last_name" placeholder="Nom">
                                 @error('last_name')
 
                                     <small id="" class="form-text  text-danger">{{ $message }}</small>
@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <input type="email" value="{{ $staff->email }}" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="email">
+                                <input type="email" value="{{ $staff->email }}" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email">
                                 @error('email')
 
                                     <small id="" class="form-text  text-danger">{{ $message }}</small>
@@ -48,7 +48,7 @@
                                 @enderror
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" value="{{ $staff->phone ?? "" }}" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="téléphone">
+                                <input type="text" value="{{ $staff->phone ?? "" }}" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="Téléphone">
                                 @error('phone')
 
                                     <small id="" class="form-text  text-danger">{{ $message }}</small>

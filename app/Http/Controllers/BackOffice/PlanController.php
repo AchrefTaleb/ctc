@@ -118,7 +118,7 @@ class PlanController extends Controller
                 $plan->save();
             }
 
-            return back()->with('success','Votre plan a etait enregistrer!');
+            return back()->with('success','Votre plan a été enregistré!');
 
     }
 }

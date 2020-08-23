@@ -20,7 +20,7 @@
                         <form method="POST" action="{{ route('backoffice.client.store') }}" novalidate>
                             @csrf
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control @error('name') is-invalid @enderror " name="name" placeholder="prenom" required>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror " name="name" placeholder="Prénom" required>
 
                                 @error('name')
 
@@ -29,7 +29,7 @@
                                 @enderror
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" placeholder="nom">
+                                <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" placeholder="Nom">
                                 @error('last_name')
 
                                     <small id="" class="form-text  text-danger">{{ $message }}</small>
@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="email">
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email">
                                 @error('email')
 
                                     <small id="" class="form-text  text-danger">{{ $message }}</small>
@@ -46,7 +46,7 @@
                                 @enderror
                             </div>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="téléphone">
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="Téléphone">
                                 @error('phone')
 
                                     <small id="" class="form-text  text-danger">{{ $message }}</small>
@@ -54,8 +54,7 @@
                                 @enderror
                             </div>
                             <div class="form-group mb-3">
-                                <textarea type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse" placeholder="Adresse">
-                                </textarea>
+                                <textarea type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse" placeholder="Adresse"></textarea>
                                     @error('adresse')
 
                                     <small id="" class="form-text  text-danger">{{ $message }}</small>
