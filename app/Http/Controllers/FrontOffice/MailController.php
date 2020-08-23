@@ -16,7 +16,7 @@ class MailController extends Controller
 
     public function list()
     {
-        $this->authorize('mail-list', Mail::class);
+       // $this->authorize('mail-list', Mail::class);
 
         $mails = Client::find(auth()->user()->id)->mails()->where('trash',false)->orderBy('created_at','desc')->get();
 
