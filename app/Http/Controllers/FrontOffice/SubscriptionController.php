@@ -41,6 +41,7 @@ class SubscriptionController extends Controller
     {
         $this->validate($request,[
             'plan' => "required",
+            'option' => "required"
         ]);
 
         $plan = Plan::find($request->post('plan'));
@@ -48,6 +49,7 @@ class SubscriptionController extends Controller
 
         return view('FrontOffice.pages.subscription.checkout',[
             "plan" => $plan,
+            "option" => $request->post('option')
         ]);
     }
 
@@ -64,11 +66,12 @@ class SubscriptionController extends Controller
 
        $res =  $stripeHelper->addCard(auth()->user(),$request->post('stripeToken'));
 
+       $option = $request->post('option').'_stripe_id';
         if(!($res instanceof Exception))
         {
             $p = [
                 [
-                    'plan' => $plan->stripe_id,
+                    'plan' => $plan->$option,
                     'quantity' => 1,
                 ]
             ];

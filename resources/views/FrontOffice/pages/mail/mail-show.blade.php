@@ -17,14 +17,22 @@
                 <div class="widget-content widget-content-area">
                     <div class="table-responsive mb-4">
                         <div class="row col-md-12">
-                            <div class="rox col-md-6">
-                                <div class="col-md-12">
+                            <div class="row col-md-6">
+                                <div class="col-md-6">
                                     <label>code:</label>
                                     <p>  {{ $mail->code }}</p>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-16">
                                     <label>Description:</label>
                                     <p>{{ $mail->description }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Expéditeur,:</label>
+                                    <p>{{ $mail->from }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Date:</label>
+                                    <p>{{ $mail->created_at->format('d-m-Y') ?? "-----"  }}</p>
                                 </div>
                             </div>
                             <div class=" row col-md-3"></div>

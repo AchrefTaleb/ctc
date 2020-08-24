@@ -24,6 +24,7 @@
                         <form id="payment-form" method="post" action="{{route('frontoffice.subscription.charge')}}">
                             @csrf
                             <input type="hidden" name="plan" value="{{ $plan->id }}">
+                            <input type="hidden" name="option" value="{{ $option }}">
                         <div class="inv-detail">
 
                             <div id="card-element">
@@ -64,7 +65,15 @@
                         <div class="inv-detail">
                             <div class="info-detail-1">
                                 <p>Plan mensuel</p>
-                                <p>{{ $plan->price }} €</p>
+                                @if($option == 'm3')
+                                    <p>{{ $plan->m3_price }} €</p>
+                                @elseif($option == 'm6')
+                                    <p>{{ $plan->m6_price }} €</p>
+                                @elseif($option == 'm9')
+                                    <p>{{ $plan->m9_price }} €</p>
+                                @elseif($option == 'm12')
+                                    <p>{{ $plan->m12_price }} €</p>
+                                @endif
                             </div>
 
                         </div>

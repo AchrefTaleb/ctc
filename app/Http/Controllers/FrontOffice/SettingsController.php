@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\BackOffice;
+namespace App\Http\Controllers\FrontOffice;
 
+use App\Client;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ClientUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -13,7 +15,7 @@ class SettingsController extends Controller
     {
         $user = auth()->user();
 
-        return view('BackOffice.pages.settings.profile',[
+        return view('FrontOffice.pages.settings.profile',[
             "me" => $user,
         ]);
     }
@@ -40,6 +42,17 @@ class SettingsController extends Controller
         throw ValidationException::withMessages(['old_password' => 'Mot de passe incorrect']);
 
 
+    }
+
+
+    public function profileUpdate(ClientUpdateRequest $request)
+    {
+        $staff = Client::findOrFail($request->post('id'));
+
+
+        $staff->update($request->only(['name','last_name','email','phone','adresse']));
+
+        return back()->with('success','Votre client à été modifié!');
     }
 
 

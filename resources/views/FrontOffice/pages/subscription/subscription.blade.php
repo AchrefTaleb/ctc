@@ -14,21 +14,11 @@
                 <div class="widget-content">
                     <div class="invoice-box">
 
-                        <div class="acc-total-info">
+                        <div class="acc-total-info" style="border: none">
                             <h5>{{ $subscription->plan->name }}</h5>
                             <p class="text-center">{{ $subscription->plan->description }}</p>
                             <p class="text-center"><span class="small ">{{ $subscription->plan->note }}</span></p>
                         </div>
-
-                        <div class="inv-detail">
-                            <div class="info-detail-1">
-                                <p>Plan mensuel</p>
-                                <p>{{ $subscription->plan->price }} €</p>
-                            </div>
-
-                        </div>
-
-
                     </div>
                 </div>
 

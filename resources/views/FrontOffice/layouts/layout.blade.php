@@ -36,7 +36,7 @@
 <!--  END LOADER -->
 
 <!--  BEGIN NAVBAR  -->
-@include('BackOffice.globals.header')
+@include('FrontOffice.globals.header')
 <!--  END NAVBAR  -->
 
 <!--  BEGIN NAVBAR  -->

@@ -8,7 +8,7 @@ class Client extends Model
 {
     protected $table="users";
     protected $guard_name = 'web'; // permisson
-    protected $fillable = ['name','last_name','email','phone','password'];
+    protected $fillable = ['name','last_name','email','phone','password','adresse'];
 
     public function mails()
     {

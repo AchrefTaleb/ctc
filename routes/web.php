@@ -101,6 +101,14 @@ Route::prefix('backoffice')->namespace('BackOffice')->middleware(['auth','backof
     Route::get('/plan/custom/create','PlanController@createCustomPlan')->name('backoffice.plan.custom.create');
     Route::post('/plan/custom/store','PlanController@storeCustomPlan')->name('backoffice.plan.custom.store');
 
+    /*
+     *
+     *  Profile
+     *
+     */
+    Route::get('profile','SettingsController@profile')->name('backoffice.profile');
+    Route::post('password','SettingsController@password')->name('backoffice.password');
+
 
 });
 
@@ -139,6 +147,11 @@ Route::prefix('frontoffice')->namespace('FrontOffice')->middleware(['auth','fron
         Route::post('mail/request/paiement','MailController@requestPayement')->name('frontoffice.mail.request.paiement');
 
         Route::get('/my/subscription','SubscriptionController@user_plan')->name('frontoffice.my.subscription');
+
+
+        Route::get('profile','SettingsController@profile')->name('frontoffice.profile');
+        Route::post('profile/update','SettingsController@profileUpdate')->name('frontoffice.profile.update');
+        Route::post('password','SettingsController@password')->name('frontoffice.password');
 
     });
 

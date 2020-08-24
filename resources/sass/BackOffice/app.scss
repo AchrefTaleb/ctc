@@ -2,6 +2,7 @@
 @import "loader.css";
 @import "~bootstrap/scss/bootstrap";
 @import "plugins.css";
+@import "users/user-profile.css";
 
 /*
   #### OVVERWRITE
@@ -88,4 +89,10 @@ span.mb-4.select2-container--default{
   margin-right: 0;
   margin-left: 0;
   width: 100%;
+}
+
+.user-profile .widget-content-area .user-info-list ul.contacts-block li a {
+  font-weight: 600;
+  font-size: 12px;
+  color: #1b55e2;
 }

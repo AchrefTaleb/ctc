@@ -12,7 +12,7 @@
                     <div class="pricing__item">
                         <h3 class="pricing__title">{{ $plan->name }}</h3>
                         <p class="pricing__sentence">{{ $plan->description }}</p>
-                        <div class="pricing__price"><span class="pricing__currency">€</span>{{ $plan->price }}<span class="pricing__period">/ mois</span></div>
+                        <div class="pricing__price"><span class="pricing__currency">€</span><a class="plan{{ $plan->id }}">{{ $plan->m3_price }}</a><span class="pricing__period">/ mois</span></div>
                         <ul class="pricing__feature-list text-center">
                             <li class="pricing__feature"><svg> ... </svg> {{ $plan->note }}</li>
 
@@ -20,21 +20,21 @@
                         <form method="post" action="{{ route('frontoffice.subscription.checkout') }}">
                             @csrf
                             <input type="hidden" name="plan" value="{{ $plan->id }}">
-                            <div class="n-chk">
+                            <div class="n-chk mb-3">
                                 <label class="new-control new-radio radio-primary">
-                                    <input type="radio" class="new-control-input" name="custom-radio-1" checked>
+                                    <input type="radio" class="new-control-input" value="m3" data-form="plan{{ $plan->id }}" data-val="{{ $plan->m3_price }}" name="option" checked>
                                     <span class="new-control-indicator"></span>3 mois
                                 </label>
                                 <label class="new-control new-radio radio-primary">
-                                    <input type="radio" class="new-control-input" name="custom-radio-1" checked>
+                                    <input type="radio" class="new-control-input" value="m6" data-form="plan{{ $plan->id }}"  data-val="{{ $plan->m6_price }}" name="option" >
                                     <span class="new-control-indicator"></span>6 mois
                                 </label>
                                 <label class="new-control new-radio radio-primary">
-                                    <input type="radio" class="new-control-input" name="custom-radio-1" checked>
+                                    <input type="radio" class="new-control-input" value="m9" data-form="plan{{ $plan->id }}"  data-val="{{ $plan->m9_price }}" name="option">
                                     <span class="new-control-indicator"></span>9 mois
                                 </label>
                                 <label class="new-control new-radio radio-primary">
-                                    <input type="radio" class="new-control-input" name="custom-radio-1" checked>
+                                    <input type="radio" class="new-control-input" value="m12" data-form="plan{{ $plan->id }}"  data-val="{{ $plan->m12_price }}" name="option">
                                     <span class="new-control-indicator"></span>12 mois
                                 </label>
                             </div>
@@ -49,26 +49,16 @@
     </div>
     </div>
     </div>
-    @if(count($plans) == 1)
+
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const app = new Vue({
-                el: '#app',
-                data: {
-                    plan: ''
-                },
-                created() {
-
-                },
-                mounted() {
-
-                },
-                methods: {},
-
-                watch: {},
-
+            $('.new-control-input').on('change', function() {
+                let price = $(this).data('val');
+                let clas = $(this).data('form');
+                $('.'+clas).text(price);
             });
         });
     </script>
-    @endif
+
+
 @endsection
