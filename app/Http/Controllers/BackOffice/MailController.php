@@ -75,7 +75,8 @@ class MailController extends Controller
 
         $req = $request->all();
         $now = Carbon::now();
-        $code = 'CT'.$now->format('dmy').'-'.$now->format('hms');
+      //  $code = 'CT'.$now->format('dmy').'-'.$now->format('hms');
+        $code = auth()->user()->id.'-'.$request->user_id.'-'.rand(10,99).'-'.'01';
         $req['code'] = $code;
         $mail = Mail::create($req);
 
