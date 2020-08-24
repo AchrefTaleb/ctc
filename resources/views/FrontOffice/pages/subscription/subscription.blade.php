@@ -46,7 +46,7 @@
                     <div class="invoice-box">
 
                         <div class="acc-total-info">
-                            <h5>Liste des facture</h5>
+                            <h5>Liste des factures</h5>
 
                         </div>
 

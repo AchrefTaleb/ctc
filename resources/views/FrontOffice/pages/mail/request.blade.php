@@ -23,7 +23,7 @@
                                 <th><div class="th-content">Demande</div></th>
                                 <th><div class="th-content">Courrier</div></th>
                                 <th><div class="th-content">adresse</div></th>
-                                <th><div class="th-content th-heading">Price(€)</div></th>
+                                <th><div class="th-content th-heading">Prix(€)</div></th>
                                 <th><div class="th-content">Status</div></th>
                                 <th><div class="th-content">Facture</div></th>
                                 <th><div class="th-content">Action</div></th>
@@ -42,11 +42,11 @@
                                             @elseif($request->status == 'approved')
                                             <span class="badge outline-badge-warning">Valider le paiement</span>
                                             @elseif($request->status == 'executed')
-                                            <span class="badge outline-badge-success">Encours</span>
+                                            <span class="badge outline-badge-success">En cours</span>
                                             @elseif($request->status == 'sent')
                                             <span class="badge outline-badge-info">Envoyer</span>
                                             @else
-                                            <span class="badge outline-badge-danger">Annulé</span>
+                                            <span class="badge outline-badge-danger">Annuler</span>
                                             @endif
                                         </div></td>
                                 <td>

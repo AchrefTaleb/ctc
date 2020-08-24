@@ -47,7 +47,7 @@ class StaffController extends Controller
         $user->assignRole('staff');
 
 
-       return back()->with('success','Votre utilisateur à etait enregistrer!');
+       return back()->with('success','Votre membre de staff à été enregistré avec succés!');
     }
 
 
@@ -66,7 +66,7 @@ class StaffController extends Controller
 
         $staff->update($request->only(['name','last_name','email','phone','adresse']));
 
-        return back()->with('success','Votre utilisateur à etait modifier!');
+        return back()->with('success','Votre Membre de staff à été modifié avec succés!');
     }
 
     public function delete(Request $request)
@@ -80,7 +80,7 @@ class StaffController extends Controller
         $user->roles()->detach();
         $user->delete();
 
-        return back()->with('success','Votre utilisateur à etait supprimer!');
+        return back()->with('success','Votre Membre de staff à été supprimé avec succés!');
 
     }
 }

@@ -17,7 +17,7 @@
             <li class="menu">
                 <a href="#Couriels" data-toggle="collapse"  @if( (Route::currentRouteName() == 'frontoffice.categorymail.list')||(Route::currentRouteName() == 'frontoffice.mail.list') || (Route::currentRouteName() == 'frontoffice.mail.list.trash')) aria-expanded="true" data-active="true"   @else aria-expanded="false" data-active="false"  @endif class="dropdown-toggle">
                     <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>                        <span>Couriels</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>                        <span>Mon Courrier</span>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -28,13 +28,13 @@
                         <a href="{{ route('frontoffice.mail.list') }}"> Courriers </a>
                     </li>
                     <li>
-                        <a href="{{ route('frontoffice.mail.list.trash') }}"> Corbiel</a>
+                        <a href="{{ route('frontoffice.mail.list.trash') }}"> Corbeille</a>
                     </li>
                     <li>
                         <a href="{{ route('frontoffice.mail.list.archive') }}"> Archive</a>
                     </li>
                     <li>
-                        <a href="{{ route('frontoffice.mail.request.list') }}"> Demande d'envoi</a>
+                        <a href="{{ route('frontoffice.mail.request.list') }}"> Demande de réexpédition</a>
                     </li>
 
                 </ul>

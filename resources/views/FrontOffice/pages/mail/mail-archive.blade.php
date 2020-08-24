@@ -22,12 +22,12 @@
                     <tr>
                         <th>#</th>
                         <th>Code</th>
-                        <th>De</th>
-                        <th>Pour</th>
+                        <th>Expéditeur</th>
+                        <th>Destinataire</th>
                         <th>type</th>
                         <th>Catégorie</th>
-                        <th>le</th>
-                        <th>description</th>
+                        <th>Date</th>
+                        <th>Description</th>
                         <th class="no-content">Action</th>
                     </tr>
                     </thead>
@@ -63,10 +63,10 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Suprimer {{ $mail->name.' '.$mail->last_name }}</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Supprimer {{ $mail->name.' '.$mail->last_name }}</h5>
                                 </div>
                                 <div class="modal-body">
-                                    <p class="modal-text">voulez-vous vraiment supprimer cet utilisateur ? </p>
+                                    <p class="modal-text">Voulez-vous vraiment supprimer ce courrier ? </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Fermer</button>

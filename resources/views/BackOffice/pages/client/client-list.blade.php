@@ -8,7 +8,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
-                            <h4 class="float-left">Clients</h4>
+                            <h4 class="float-left">Liste des clients</h4>
                             <a href="{{ route('backoffice.client.createform') }}" class="btn  mr-3 btn-warning float-right mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Ajouter</a>
                         </div>
                         <div class="col-md-12">
@@ -22,7 +22,7 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Prenom</th>
+                        <th>Prénom</th>
                         <th>Nom</th>
                         <th>Email</th>
                         <th>Téléphone</th>
@@ -60,7 +60,7 @@
                                     <h5 class="modal-title" id="exampleModalLabel">Suprimer {{ $client->name.' '.$client->last_name }}</h5>
                                 </div>
                                 <div class="modal-body">
-                                    <p class="modal-text">voulez-vous vraiment supprimer cet utilisateur ? </p>
+                                    <p class="modal-text">voulez-vous vraiment supprimer ce client ? </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Fermer</button>

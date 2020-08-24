@@ -78,10 +78,10 @@ class SubscriptionController extends Controller
 
                 $sub->save();
 
-                return redirect()->route('frontoffice.home')->with('success','Inscription reussite!');
+                return redirect()->route('frontoffice.home')->with('success','Inscription réussite!');
             }else{
 
-                return back()->with('error','Un probleme occured!');
+                return back()->with('error','Un problème est survenu!');
             }
         }
 

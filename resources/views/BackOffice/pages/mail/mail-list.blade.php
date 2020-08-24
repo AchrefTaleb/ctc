@@ -8,7 +8,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
-                            <h4 class="float-left">Courrier</h4>
+                            <h4 class="float-left">Liste des courriers</h4>
                             <a href="{{ route('backoffice.mail.createform') }}" class="btn  mr-3 btn-warning float-right mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Ajouter</a>
                         </div>
                         <div class="col-md-12">
@@ -23,12 +23,12 @@
                     <tr>
                         <th>#</th>
                         <th>Code</th>
-                        <th>De</th>
-                        <th>Pour</th>
+                        <th>Expéditeur</th>
+                        <th>Destinataire</th>
                         <th>type</th>
                         <th>Catégorie</th>
-                        <th>le</th>
-                        <th>description</th>
+                        <th>Date</th>
+                        <th>Description</th>
                         <th class="no-content">Action</th>
                     </tr>
                     </thead>
@@ -65,10 +65,10 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Suprimer {{ $mail->name.' '.$mail->last_name }}</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Supprimer {{ $mail->name.' '.$mail->last_name }}</h5>
                                 </div>
                                 <div class="modal-body">
-                                    <p class="modal-text">voulez-vous vraiment supprimer cet utilisateur ? </p>
+                                    <p class="modal-text">Voulez-vous vraiment supprimer ce courrier ? </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Fermer</button>
