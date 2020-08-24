@@ -51,8 +51,7 @@
 
                                             <li class="warning"><a href="{{ route('frontoffice.mail.show',[$mail->id]) }}" class="bs-tooltip"  data-placement="top" title="" data-original-title="Show">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>                                       </a></li>
-                                            <li><a href="javascript:void(0);" class="bs-tooltip" data-toggle="modal" data-target="#client{{$mail->id}}" data-placement="top" title="" data-original-title="Delete">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>                                                </a></li>
+
 
                                         </ul>
                                     </td>
