@@ -158,7 +158,7 @@ class MailController extends Controller
 
         $req->user_id  = auth()->user()->id;
       //  $req->mail_id = $mail->id;
-        $req->mail_id = 0;
+      //  $req->mail_id = 0;
         $req->adresse = $request->post('adresse');
         $req->save();
         $req->mails()->attach($mails);
