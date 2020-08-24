@@ -163,7 +163,7 @@ class MailController extends Controller
         $req->save();
         $req->mails()->attach($mails);
 
-        return redirect()->route('frontoffice.mail.request.list')->with('success','Votre demande a etait sauvgarder!');
+        return redirect()->route('frontoffice.mail.request.list')->with('success','Votre demande a été sauvgardé!');
 
     }
 

@@ -26,8 +26,8 @@
                               <div class="form-inline">
                                 @csrf
                                 <div class="form-group mr-2">
-                                    <label class="mr-2">Ajouter element</label>
-                                    <input type="text" class="form-control " v-model="item.name" placeholder="titre" required>
+                                    <label class="mr-2">Ajouter élément</label>
+                                    <input type="text" class="form-control " v-model="item.name" placeholder="Titre" required>
 
                                 </div>
                                 <div class="form-group mr-2">
@@ -143,7 +143,7 @@
                                 }
                             }).then( response => {
                             Snackbar.show({
-                                text: 'Les element de coirrier sauvgarder !',
+                                text: 'Les éléments de courrier sauvgardés !',
                                 actionTextColor: '#fff',
                                 backgroundColor: '#8dbf42',
                                 pos: 'top-right'

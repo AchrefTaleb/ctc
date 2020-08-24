@@ -34,7 +34,7 @@
                         <a href="{{ route('frontoffice.mail.list.archive') }}"> Archive</a>
                     </li>
                     <li>
-                        <a href="{{ route('frontoffice.mail.request.list') }}"> Demande de réexpédition</a>
+                        <a href="{{ route('frontoffice.mail.request.list') }}"> Réexpédition</a>
                     </li>
 
                 </ul>

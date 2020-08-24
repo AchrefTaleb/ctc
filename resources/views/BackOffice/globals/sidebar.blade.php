@@ -41,7 +41,7 @@
                         <a href="{{ route('backoffice.mail.request.list') }}"> Liste des demandes </a>
                     </li>
                     <li>
-                        <a href="{{ route('backoffice.mail.list.trash') }}"> Corbiel</a>
+                        <a href="{{ route('backoffice.mail.list.trash') }}"> Corbielle</a>
                     </li>
                     <li>
                         <a href="{{ route('backoffice.mail.list.archive') }}"> Archive</a>
@@ -60,7 +60,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled  @if((Route::currentRouteName() == 'backoffice.plan.list')||(Route::currentRouteName() == 'backoffice.plan.custom.create') ) show  @endif " id="plans" data-parent="#accordionExample">
                     <li>
-                        <a href="{{ route('backoffice.plan.list') }}"> List des plan </a>
+                        <a href="{{ route('backoffice.plan.list') }}"> List des plans </a>
                     </li>
                     <li>
                         <a href="{{ route('backoffice.plan.custom.create') }}"> Ajouter </a>
