@@ -55,8 +55,40 @@
                                 @enderror
                             </div>
                             <div class="form-group mb-3">
-                                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" name="price" placeholder="prix">
+                                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" name="price" placeholder="prix 1 mois">
                                 @error('price')
+
+                                <small id="" class="form-text  text-danger">{{ $message }}</small>
+
+                                @enderror
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="number" step="0.01" class="form-control @error('m3_price') is-invalid @enderror" name="m3_price" placeholder="prix 3 mois">
+                                @error('m3_price')
+
+                                <small id="" class="form-text  text-danger">{{ $message }}</small>
+
+                                @enderror
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="number" step="0.01" class="form-control @error('m6_price') is-invalid @enderror" name="m6_price" placeholder="prix 6 mois">
+                                @error('m6_price')
+
+                                <small id="" class="form-text  text-danger">{{ $message }}</small>
+
+                                @enderror
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="number" step="0.01" class="form-control @error('m9_price') is-invalid @enderror" name="m9_price" placeholder="prix 9 mois">
+                                @error('m9_price')
+
+                                <small id="" class="form-text  text-danger">{{ $message }}</small>
+
+                                @enderror
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="number" step="0.01" class="form-control @error('m12_price') is-invalid @enderror" name="m12_price" placeholder="prix 12 mois">
+                                @error('m12_price')
 
                                 <small id="" class="form-text  text-danger">{{ $message }}</small>
 

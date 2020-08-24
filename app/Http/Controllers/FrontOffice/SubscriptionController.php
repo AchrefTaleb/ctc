@@ -10,6 +10,7 @@ use App\Request as Req;
 use App\Subscription;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class SubscriptionController extends Controller
 {
@@ -21,6 +22,11 @@ class SubscriptionController extends Controller
 
         if(count($plans) <= 0) {
             $plans = Plan::where('type','standard')->where('status',true)->get();
+        }
+        $value = Cookie::get('plan');
+        if($value)
+        {
+            $plans = Plan::where('id',$value)->get();
         }
 
 

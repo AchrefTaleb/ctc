@@ -132,6 +132,7 @@ Route::prefix('frontoffice')->namespace('FrontOffice')->middleware(['auth','fron
         Route::post('mail/archive','MailController@archive')->name('frontoffice.mail.archive');
         Route::post('mail/restore/archive','MailController@restore_archive')->name('frontoffice.mail.restore_archive');
         Route::post('mail/request/send','MailController@requesting')->name('frontoffice.mail.request.send');
+        Route::get('mail/request/add','MailController@requestAdd')->name('frontoffice.mail.request.add');
         Route::get('mail/request/list','MailController@requestList')->name('frontoffice.mail.request.list');
         Route::get('mail/request/cancel/{request}','MailController@cancelRequest')->name('frontoffice.mail.request.canceling');
         Route::get('mail/request/checkout/{request}','MailController@requestCheckout')->name('frontoffice.mail.request.checkout');

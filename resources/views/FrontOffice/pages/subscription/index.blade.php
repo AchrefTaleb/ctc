@@ -20,6 +20,24 @@
                         <form method="post" action="{{ route('frontoffice.subscription.checkout') }}">
                             @csrf
                             <input type="hidden" name="plan" value="{{ $plan->id }}">
+                            <div class="n-chk">
+                                <label class="new-control new-radio radio-primary">
+                                    <input type="radio" class="new-control-input" name="custom-radio-1" checked>
+                                    <span class="new-control-indicator"></span>3 mois
+                                </label>
+                                <label class="new-control new-radio radio-primary">
+                                    <input type="radio" class="new-control-input" name="custom-radio-1" checked>
+                                    <span class="new-control-indicator"></span>6 mois
+                                </label>
+                                <label class="new-control new-radio radio-primary">
+                                    <input type="radio" class="new-control-input" name="custom-radio-1" checked>
+                                    <span class="new-control-indicator"></span>9 mois
+                                </label>
+                                <label class="new-control new-radio radio-primary">
+                                    <input type="radio" class="new-control-input" name="custom-radio-1" checked>
+                                    <span class="new-control-indicator"></span>12 mois
+                                </label>
+                            </div>
                             <button type="submit" class="pricing__action mx-auto mb-4">Je souscris</button>
                         </form>
                     </div>
@@ -31,4 +49,26 @@
     </div>
     </div>
     </div>
+    @if(count($plans) == 1)
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const app = new Vue({
+                el: '#app',
+                data: {
+                    plan: ''
+                },
+                created() {
+
+                },
+                mounted() {
+
+                },
+                methods: {},
+
+                watch: {},
+
+            });
+        });
+    </script>
+    @endif
 @endsection

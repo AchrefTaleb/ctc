@@ -21,7 +21,7 @@
                             <thead>
                             <tr>
                                 <th><div class="th-content">Demande</div></th>
-                                <th><div class="th-content">Courrier</div></th>
+                                <th><div class="th-content">Courriers</div></th>
                                 <th><div class="th-content">Client</div></th>
                                 <th><div class="th-content">adresse</div></th>
                                 <th><div class="th-content th-heading">Price(€)</div></th>
@@ -33,7 +33,11 @@
 
                             @foreach($requested as $request) <tr>
                                 <td>{{ $request->id }}</td>
-                                <td><div class="td-content product-brand">{{ $request->mail->code }}</div></td>
+                                <td><div class="td-content product-brand"><ul>
+                                        @foreach($request->mails as $mail)
+                                            <li>{{ $mail->code }}</li>
+                                        @endforeach
+                                        </ul></div></td>
                                 <td><div class="td-content product-brand">{{ $request->client->name ?? '' }} {{ $request->client->last_name ?? '' }}</div></td>
                                 <td><div class="td-content">{{ $request->adresse }}</div></td>
                                 <td><div class="td-content pricing"><span class="">{{ $request->price ? '€'.$request->price : '----' }} </span></div></td>
@@ -138,7 +142,11 @@
 
                             @foreach($approved as $request) <tr>
                                 <td>{{ $request->id }}</td>
-                                <td><div class="td-content product-brand">{{ $request->mail->code }}</div></td>
+                                <td><div class="td-content product-brand"><ul>
+                                        @foreach($request->mails as $mail)
+                                            <li>{{ $mail->code }}</li>
+                                        @endforeach
+                                        </ul></div></td>
                                 <td><div class="td-content product-brand">{{ $request->client->name ?? '' }} {{ $request->client->last_name ?? '' }}</div></td>
                                 <td><div class="td-content">{{ $request->adresse }}</div></td>
                                 <td><div class="td-content pricing"><span class="">{{ $request->price ? '€'.$request->price : '----' }} </span></div></td>
@@ -212,7 +220,11 @@
 
                             @foreach($executed as $request) <tr>
                                 <td>{{ $request->id }}</td>
-                                <td><div class="td-content product-brand">{{ $request->mail->code }}</div></td>
+                                <td><div class="td-content product-brand"><ul>
+                                        @foreach($request->mails as $mail)
+                                            <li>{{ $mail->code }}</li>
+                                        @endforeach
+                                        </ul></div></td>
                                 <td><div class="td-content product-brand">{{ $request->client->name ?? '' }} {{ $request->client->last_name ?? '' }}</div></td>
                                 <td><div class="td-content">{{ $request->adresse }}</div></td>
                                 <td><div class="td-content pricing"><span class="">{{ $request->price ? '€'.$request->price : '----' }} </span></div></td>
@@ -291,7 +303,11 @@
 
                             @foreach($sent as $request) <tr>
                                 <td>{{ $request->id }}</td>
-                                <td><div class="td-content product-brand">{{ $request->mail->code }}</div></td>
+                                <td><div class="td-content product-brand"><ul>
+                                        @foreach($request->mails as $mail)
+                                            <li>{{ $mail->code }}</li>
+                                        @endforeach
+                                        </ul></div></td>
                                 <td><div class="td-content product-brand">{{ $request->client->name ?? '' }} {{ $request->client->last_name ?? '' }}</div></td>
                                 <td><div class="td-content">{{ $request->adresse }}</div></td>
                                 <td><div class="td-content pricing"><span class="">{{ $request->price ? '€'.$request->price : '----' }} </span></div></td>
@@ -367,7 +383,11 @@
                             @foreach($canceled as $request)
                                 <tr>
                                 <td>{{ $request->id }}</td>
-                                <td><div class="td-content product-brand">{{ $request->mail->code }}</div></td>
+                                <td><div class="td-content product-brand"><ul>
+                                        @foreach($request->mails as $mail)
+                                            <li>{{ $mail->code }}</li>
+                                        @endforeach
+                                        </ul></div></td>
                                 <td><div class="td-content product-brand">{{ $request->client->name ?? '' }} {{ $request->client->last_name ?? '' }}</div></td>
                                 <td><div class="td-content">{{ $request->adresse }}</div></td>
                                 <td><div class="td-content pricing"><span class="">{{ $request->price ? '€'.$request->price : '----' }} </span></div></td>

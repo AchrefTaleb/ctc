@@ -78,6 +78,10 @@ class PlanController extends Controller
                 'family_name' => 'required',
                 'type' => 'required',
                 'price' => 'required',
+                'm3_price' => 'required',
+                'm6_price' => 'required',
+                'm9_price' => 'required',
+                'm12_price' => 'required',
                 'description' => 'required',
                 'note' => 'required'
 
@@ -90,6 +94,10 @@ class PlanController extends Controller
             $plan->family_name = $request->post('family_name');
             $plan->type = $request->post('type');
             $plan->price = $request->post('price');
+            $plan->m3_price = $request->post('m3_price');
+            $plan->m6_price = $request->post('m6_price');
+            $plan->m9_price = $request->post('m9_price');
+            $plan->m12_price = $request->post('m12_price');
             $plan->description = $request->post('description');
             $plan->note = $request->post('note');
             if($request->post('type') == 'professional'){
@@ -103,18 +111,66 @@ class PlanController extends Controller
             $plan->save();
 
             if($plan){
+                // 3m
                 $res = Pln::create([
                     // 'billing_scheme' => 'tiered',
                     'usage_type' => 'licensed',
                     'tiers_mode' => 'volume',
                     'currency' => 'EUR',
                     'interval' => 'month',
-                    'product' => ['name' => $plan->name],
-                    'amount' => $plan->price * 100,
+                    'interval_count' => 3,
+                    'product' => ['name' => $plan->name.' 3 mois'],
+                    'amount' => $plan->m3_price * 100,
 
                 ]);
 
-                $plan->stripe_id = $res->id;
+                $plan->m3_stripe_id = $res->id;
+
+                // 6m
+                $res = Pln::create([
+                    // 'billing_scheme' => 'tiered',
+                    'usage_type' => 'licensed',
+                    'tiers_mode' => 'volume',
+                    'currency' => 'EUR',
+                    'interval' => 'month',
+                    'interval_count' => 6,
+                    'product' => ['name' => $plan->name.' 6 mois'],
+                    'amount' => $plan->m6_price * 100,
+
+                ]);
+
+                $plan->m6_stripe_id = $res->id;
+
+                // 9m
+                $res = Pln::create([
+                    // 'billing_scheme' => 'tiered',
+                    'usage_type' => 'licensed',
+                    'tiers_mode' => 'volume',
+                    'currency' => 'EUR',
+                    'interval' => 'month',
+                    'interval_count' => 9,
+                    'product' => ['name' => $plan->name.' 9 mois'],
+                    'amount' => $plan->m9_price * 100,
+
+                ]);
+
+                $plan->m9_stripe_id = $res->id;
+
+                // 12m
+                $res = Pln::create([
+                    // 'billing_scheme' => 'tiered',
+                    'usage_type' => 'licensed',
+                    'tiers_mode' => 'volume',
+                    'currency' => 'EUR',
+                    'interval' => 'month',
+                    'interval_count' => 12,
+                    'product' => ['name' => $plan->name.' 12 mois'],
+                    'amount' => $plan->m12_price * 100,
+
+                ]);
+
+                $plan->m12_stripe_id = $res->id;
+
                 $plan->save();
             }
 

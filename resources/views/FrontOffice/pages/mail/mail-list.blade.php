@@ -23,12 +23,12 @@
                             <tr>
                                 <th>#</th>
                                 <th>Code</th>
-                                <th>Expéditeur</th>
-                                <th>Destinataire</th>
+                                <th>De</th>
+                                <th>Pour</th>
                                 <th>type</th>
                                 <th>Catégorie</th>
-                                <th>Date</th>
-                                <th>Description</th>
+                                <th>le</th>
+                                <th>description</th>
                                 <th class="no-content">Action</th>
                             </tr>
                             </thead>

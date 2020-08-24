@@ -126,7 +126,14 @@ class MailController extends Controller
         return back()->with('success','Votre Courrier à été restauré!');
     }
 
+    public function requestAdd()
+    {
+        $mails = Client::find(auth()->user()->id)->mails()->where('trash',false)->orderBy('created_at','desc')->get();
 
+        return view('FrontOffice.pages.mail.request-add',[
+            "mails" => $mails,
+        ]);
+    }
     public function requestList()
     {
         $requests = Req::where('user_id',auth()->user()->id)->get();
@@ -140,20 +147,23 @@ class MailController extends Controller
     public function requesting(Request $request)
     {
         $this->validate($request,[
-            'mail' => 'required',
-            'adresse' => 'required'
+            'mails' => 'required',
+           // 'adresse' => 'required'
         ]);
 
-        $mail = Mail::findOrFail($request->post('mail'));
+        $mails = $request->post('mails');
+       // $mail = Mail::findOrFail($request->post('mail'));
 
         $req= new Req();
 
         $req->user_id  = auth()->user()->id;
-        $req->mail_id = $mail->id;
+      //  $req->mail_id = $mail->id;
+        $req->mail_id = 0;
         $req->adresse = $request->post('adresse');
         $req->save();
+        $req->mails()->attach($mails);
 
-        return back()->with('success','Votre demande a été enregistrée!');
+        return redirect()->route('frontoffice.mail.request.list')->with('success','Votre demande a etait sauvgarder!');
 
     }
 
