@@ -19,7 +19,7 @@
                     <div class="invoice-box">
 
                         <div class="acc-total-info">
-                            <h5>Card information</h5>
+                            <h5>Informations de la carte</h5>
                         </div>
                         <form id="payment-form" method="post" action="{{ route('frontoffice.mail.request.paiement') }}">
                             @csrf

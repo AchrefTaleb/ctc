@@ -9,12 +9,12 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
-                            <h4 class="float-left">Demande d'envois des courriers</h4>
+                            <h4 class="float-left">Demande de réexpédition des courriers</h4>
                             <button type="submit" class="btn  mr-3 btn-warning float-right mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Ajouter</button>
                         </div>
                         <div class="col-md-12">
                             <hr/>
-                            <label>renseigner l'adresse d'expédition</label>
+                            <label>Saisir l'adresse de réexpédition</label>
                             <textarea class="form-control" name="adresse" placeholder="Saisir votre adresse..." required></textarea>
                         </div>
                     </div>
@@ -26,12 +26,12 @@
                             <tr>
                                 <th>#</th>
                                 <th>Code</th>
-                                <th>De</th>
-                                <th>Pour</th>
+                                <th>Expéditeur</th>
+                                <th>Destinataire</th>
                                 <th>type</th>
                                 <th>Catégorie</th>
-                                <th>le</th>
-                                <th>description</th>
+                                <th>Date</th>
+                                <th>Description</th>
 
                             </tr>
                             </thead>

@@ -8,7 +8,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
-                            <h4 class="float-left">Corbiel</h4>
+                            <h4 class="float-left">Corbielle</h4>
                         </div>
                         <div class="col-md-12">
                             <hr/>
@@ -63,7 +63,7 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Suprimer {{ $mail->name.' '.$mail->last_name }}</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Supprimer {{ $mail->name.' '.$mail->last_name }}</h5>
                                 </div>
                                 <div class="modal-body">
                                     <p class="modal-text">voulez-vous vraiment supprimer ce courrier ? </p>

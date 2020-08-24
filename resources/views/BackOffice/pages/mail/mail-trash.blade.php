@@ -8,7 +8,7 @@
                 <div class="widget-header">
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
-                            <h4 class="float-left">Corbiel</h4>
+                            <h4 class="float-left">Corbielle</h4>
                         </div>
                         <div class="col-md-12">
                             <hr/>
