@@ -100,6 +100,7 @@
 
 
             Snackbar.show({
+                actionText: 'Fermer',
                 text: '{{ $message }}',
                 actionTextColor: '#fff',
                 backgroundColor: '#8dbf42',

@@ -13,7 +13,7 @@
                     </div>
                 </a>
             </li>
-
+            @can('client-list')
             <li class="menu">
                 <a href="{{ route('backoffice.client.list') }}" aria-expanded="false" class="dropdown-toggle" @if(Route::currentRouteName() == 'backoffice.client.list') data-active="true"  @else data-active="false"  @endif>
                     <div class="">
@@ -22,7 +22,7 @@
                     </div>
                 </a>
             </li>
-
+            @endcan
             <li class="menu">
                 <a href="#Couriels" data-toggle="collapse"  @if( (Route::currentRouteName() == 'backoffice.categorymail.list')||(Route::currentRouteName() == 'backoffice.mail.list') || (Route::currentRouteName() == 'backoffice.mail.list.trash') || (Route::currentRouteName() == 'backoffice.mail.list.archive') || (Route::currentRouteName() == 'backoffice.mail.request.list')) aria-expanded="true" data-active="true"   @else aria-expanded="false" data-active="false"  @endif class="dropdown-toggle">
                     <div class="">
@@ -33,9 +33,11 @@
                     </div>
                 </a>
                 <ul class="collapse submenu list-unstyled  @if((Route::currentRouteName() == 'backoffice.categorymail.list')||(Route::currentRouteName() == 'backoffice.mail.list') || (Route::currentRouteName() == 'backoffice.mail.list.trash')) show  @endif " id="Couriels" data-parent="#accordionExample">
+                    @can('category-list')
                     <li>
                         <a href="{{ route('backoffice.categorymail.list') }}"> Catégories </a>
                     </li>
+                    @endcan
                     <li>
                         <a href="{{ route('backoffice.mail.list') }}"> Courriers </a>
                         <a href="{{ route('backoffice.mail.request.list') }}"> Liste des demandes </a>
@@ -49,6 +51,7 @@
 
                 </ul>
             </li>
+            @can('list-plan')
             <li class="menu">
                 <a href="#plans" data-toggle="collapse"  @if( (Route::currentRouteName() == 'backoffice.plan.list')||(Route::currentRouteName() == 'backoffice.plan.custom.create') ) aria-expanded="true" data-active="true"   @else aria-expanded="false" data-active="false"  @endif class="dropdown-toggle">
                     <div class="">
@@ -69,7 +72,7 @@
 
                 </ul>
             </li>
-
+            @endcan
 
             <li class="menu">
                 <a href="#settings" data-toggle="collapse"  @if( (Route::currentRouteName() == 'backoffice.staff.list')||(Route::currentRouteName() == 'backoffice.profile') ) aria-expanded="true" data-active="true"   @else aria-expanded="false" data-active="false"  @endif class="dropdown-toggle">
@@ -81,11 +84,13 @@
                     </div>
                 </a>
                 <ul class="collapse submenu list-unstyled  @if((Route::currentRouteName() == 'backoffice.staff.list')||(Route::currentRouteName() == 'backoffice.profile') ) show  @endif " id="settings" data-parent="#accordionExample">
+                    @can('staff-list')
                     <li class="menu">
                         <a href="{{ route('backoffice.staff.list') }}">
                           Equipe
                         </a>
                     </li>
+                    @endcan
                     <li class="menu">
                         <a href="{{ route('backoffice.profile') }}">
                           Profile
