@@ -6106,7 +6106,7 @@ span.select2.select2-container.select2-container--default.select2-container--ope
   flex: 0 1 315px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .pricing__feature-list {
