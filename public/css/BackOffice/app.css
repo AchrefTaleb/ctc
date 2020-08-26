@@ -6103,7 +6103,11 @@ span.select2.select2-container.select2-container--default.select2-container--ope
 .pricing__item {
   position: relative;
   text-align: center;
-  flex: 0 1 315px; }
+  flex: 0 1 315px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
 
 .pricing__feature-list {
   text-align: left; }
