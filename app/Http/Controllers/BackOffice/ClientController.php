@@ -74,7 +74,7 @@ class ClientController extends Controller
 
         $staff = Client::findOrFail($request->post('id'));
 
-        $staff->update($request->only(['name','last_name','email','phone','code']));
+        $staff->update($request->only(['name','last_name','email','phone','code','adresse']));
 
         return back()->with('success','Votre client à été modifié! fqgvgyvutuugyuyh');
     }
