@@ -8,7 +8,7 @@ use App\Mail;
 use App\Request as Req;
 use Carbon\Carbon;
 
-class HomeController extends Controller
+class   HomeController extends Controller
 {
 
 
