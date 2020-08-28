@@ -52,7 +52,7 @@
                         <div class="widget-heading">
                             <div class="w-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>                            </div>
-                            <p class="w-value">A finir <span class="float-right" style="font-weight: normal;">Total statistic</span></p>
+                            <p class="w-value">{{ $nb_requests }} <span class="float-right" style="font-weight: normal;"><a href="{{ route('frontoffice.mail.request.list') }}">Réexpidition à payer</a></span></p>
 
                         </div>
 
@@ -62,9 +62,9 @@
 
             </div>
 
-            
+
 
             <hr/>
-            
+
         </div>
 @endsection

@@ -16,11 +16,13 @@ class   HomeController extends Controller
     {
         $nb_mails = Mail::all()->count();
         $nb_mails_today = Mail::whereDate('created_at', Carbon::today())->get()->count();
+        $nb_requests = Req::where('user_id',auth()->user()->id)->where('status','approved')->get()->count();
 
 
         return view('FrontOffice.pages.home.home',[
             'nb_mails' => $nb_mails,
-            'nb_mails_today' => $nb_mails_today
+            'nb_mails_today' => $nb_mails_today,
+            'nb_requests' => $nb_requests,
         ]);
     }
 }
