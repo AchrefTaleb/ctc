@@ -39,8 +39,9 @@
                         <td>
                             <span><img  src="{{ asset('media/BackOffice/img').'/'.$client->photo }}" class="profile-img" alt="avatar"></span>
                         </td>
+                        <td>{{ $client->code }}</td>
                         <td>{{ $client->name }}</td>
-                        <td>{{ $client->ncode }}</td>
+
                         <td>{{ $client->last_name ?? "-----" }}</td>
                         <td>{{ $client->email ?? "-----" }}</td>
                         <td>{{ $client->phone ?? "-----" }}</td>
