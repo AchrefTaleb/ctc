@@ -22,6 +22,7 @@
                     <thead>
                     <tr>
                         <th>#</th>
+                        <th>code</th>
                         <th>Prénom</th>
                         <th>Nom</th>
                         <th>Email</th>
@@ -34,11 +35,12 @@
                     <tbody>
                     @foreach($clients as $client)
                     <tr>
-                        <td>{{ $client->code ?? '' }}</td>
+
                         <td>
                             <span><img  src="{{ asset('media/BackOffice/img').'/'.$client->photo }}" class="profile-img" alt="avatar"></span>
                         </td>
                         <td>{{ $client->name }}</td>
+                        <td>{{ $client->ncode }}</td>
                         <td>{{ $client->last_name ?? "-----" }}</td>
                         <td>{{ $client->email ?? "-----" }}</td>
                         <td>{{ $client->phone ?? "-----" }}</td>

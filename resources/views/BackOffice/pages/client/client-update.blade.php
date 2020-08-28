@@ -22,6 +22,15 @@
                             @csrf
                             <input type="hidden" name="id" value="{{ $client->id }}">
                             <div class="form-group mb-3">
+                                <input type="text" value="{{ $client->code ?? '' }}" class="form-control  @error('code') is-invalid @enderror " name="code" placeholder="code" required>
+
+                                @error('code')
+
+                                <small id="" class="form-text  text-danger"> {{ $message }}</small>
+
+                                @enderror
+                            </div>
+                            <div class="form-group mb-3">
                                 <input type="text" value="{{ $client->name }}" class="form-control  @error('name') is-invalid @enderror " name="name" placeholder="prenom" required>
 
                                 @error('name')
