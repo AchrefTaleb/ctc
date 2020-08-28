@@ -37,7 +37,7 @@
                     <tr>
 
                         <td>
-                            <span><img  src="{{ asset('media/BackOffice/img').'/'.$client->photo }}" class="profile-img" alt="avatar"></span>
+                            #
                         </td>
                         <td>{{ $client->code }}</td>
                         <td>{{ $client->name }}</td>
