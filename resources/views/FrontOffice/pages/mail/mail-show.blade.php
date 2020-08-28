@@ -9,6 +9,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
                             <h4 class="float-left">Courrier {{ $mail->code }}</h4>
+                            <a href="https://dev.transfertdecourrier.com/frontoffice/mail" class="btn btn-info mt-2 float-right">Retourner vers la liste</a>
                         </div>
                         <div class="col-md-12">
                         </div>
