@@ -70,6 +70,7 @@ class ClientController extends Controller
 
     public function update(ClientUpdateRequest $request)
     {
+        dd('qdfdfdf');
         $staff = Client::findOrFail($request->post('id'));
         dd($request->only(['name','last_name','email','phone','code']));
         $staff->update($request->only(['name','last_name','email','phone','code']));
