@@ -76603,8 +76603,8 @@ window.addEventListener("load", function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\virus-pc\Desktop\ctc2\resources\js\BackOffice\app.js */"./resources/js/BackOffice/app.js");
-module.exports = __webpack_require__(/*! C:\Users\virus-pc\Desktop\ctc2\resources\sass\BackOffice\app.scss */"./resources/sass/BackOffice/app.scss");
+__webpack_require__(/*! C:\Users\mayes\Documents\git-dev-26-08\ctc\resources\js\BackOffice\app.js */"./resources/js/BackOffice/app.js");
+module.exports = __webpack_require__(/*! C:\Users\mayes\Documents\git-dev-26-08\ctc\resources\sass\BackOffice\app.scss */"./resources/sass/BackOffice/app.scss");
 
 
 /***/ })
