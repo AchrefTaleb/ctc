@@ -20,6 +20,15 @@
                         <form method="POST" action="{{ route('backoffice.client.store') }}" novalidate>
                             @csrf
                             <div class="form-group mb-3">
+                                <input type="text" class="form-control @error('code') is-invalid @enderror " name="code" placeholder="Code" required>
+
+                                @error('code')
+
+                                <small id="" class="form-text  text-danger"> {{ $message }}</small>
+
+                                @enderror
+                            </div>
+                            <div class="form-group mb-3">
                                 <input type="text" class="form-control @error('name') is-invalid @enderror " name="name" placeholder="Prénom" required>
 
                                 @error('name')
