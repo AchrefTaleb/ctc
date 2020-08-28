@@ -34,6 +34,7 @@
                     <tbody>
                     @foreach($clients as $client)
                     <tr>
+                        <td>{{ $client->code ?? '' }}</td>
                         <td>
                             <span><img  src="{{ asset('media/BackOffice/img').'/'.$client->photo }}" class="profile-img" alt="avatar"></span>
                         </td>
