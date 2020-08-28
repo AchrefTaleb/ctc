@@ -18,7 +18,7 @@
                 </div>
                 <div class="widget-content widget-content-area">
                     <div class="table-responsive mb-4">
-                        <form method="POST" action="{{ route('backoffice.staff.update') }}" novalidate>
+                        <form method="POST" action="{{ route('backoffice.client.update') }}" novalidate>
                             @csrf
                             <input type="hidden" name="id" value="{{ $client->id }}">
                             <div class="form-group mb-3">
