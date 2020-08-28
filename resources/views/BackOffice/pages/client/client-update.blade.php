@@ -65,8 +65,7 @@
                                 @enderror
                             </div>
                             <div class="form-group mb-3">
-                                <textarea type="text" value="{{ $client->adresse ?? "" }}" class="form-control @error('adresse') is-invalid @enderror" name="adresse" placeholder="Adresse">
-                                </textarea>
+                                <textarea class="form-control @error('adresse') is-invalid @enderror" name="adresse" placeholder="Adresse">{{ $client->adresse ?? "" }}</textarea>                               </textarea>
                                 @error('adresse')
 
                                     <small id="" class="form-text  text-danger">{{ $message }}</small>
