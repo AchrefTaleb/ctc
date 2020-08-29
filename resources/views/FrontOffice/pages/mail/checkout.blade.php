@@ -56,7 +56,7 @@
                     <div class="invoice-box">
 
                         <div class="acc-total-info">
-                            <h5>Courrier: {{ $request->mail->code }}</h5>
+                            <h5>Courrier: {{ /*$request->mail->code*/ }}</h5>
                         </div>
 
                         <div class="inv-detail">
