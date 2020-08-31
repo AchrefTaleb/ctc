@@ -58,7 +58,7 @@
 
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 ">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mt-3 ">
                     <div class="widget widget-one_hybrid widget-followers">
                         <div class="widget-heading">
                             <div class="w-icon">
