@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="row col-md-12 layout-top-spacing layout-spacing">
+
         <div class="col-xl-4 col-lg-6 col-md-5 col-sm-12 layout-top-spacing">
 
             <div class="user-profile layout-spacing">
@@ -80,6 +81,16 @@
 
         </div>
 
+        <div class="col-xl-8 col-lg-6 col-md-7 col-sm-12 layout-top-spacing">
+
+            <div class="skills layout-spacing ">
+                <div class="widget-content widget-content-area">
+                    <h3 class="">Fin de contract: {{ \Carbon\Carbon::parse($ends)->format('d-m-Y') }}</h3>
+
+                </div>
+
+                </div>
+            </div>
         <div class="col-xl-8 col-lg-6 col-md-7 col-sm-12 layout-top-spacing">
 
             <div class="skills layout-spacing ">

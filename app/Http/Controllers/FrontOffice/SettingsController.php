@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\FrontOffice;
 
 use App\Client;
+use App\Helpers\stripeHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ClientUpdateRequest;
+use App\Subscription;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -14,9 +17,25 @@ class SettingsController extends Controller
     public function profile( /* Request $request */)
     {
         $user = auth()->user();
+        $ends = false;
+        $stripeHelper = new stripeHelper();
+        $sub = Subscription::where('user_id',auth()->user()->id)->first();
+
+
+        if($sub)
+        {
+            $res = $stripeHelper->getSubscription($sub->stripe_id);
+            if(!($res instanceof Exception))
+            {
+                $ends = $res->current_period_end;
+            }
+
+
+        }
 
         return view('FrontOffice.pages.settings.profile',[
             "me" => $user,
+            "e"
         ]);
     }
 
