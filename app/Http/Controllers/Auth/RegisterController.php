@@ -85,21 +85,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-       $user =  User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'adresse' => $data['adresse'],
-            'password' => Hash::make($data['password']),
-           'last_name' => $data['last_name'],
-           'phone' => $data['phone'],
-        ]);
+           $user =  User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'adresse' => $data['adresse'],
+                'password' => Hash::make($data['password']),
+               'last_name' => $data['last_name'],
+               'phone' => $data['phone'],
+            ]);
 
-        $user->assignRole('client');
-        $user->assignRole('frontoffice');
+            $user->assignRole('client');
+            $user->assignRole('frontoffice');
 
-        $stripe = new stripeHelper();
+            $stripe = new stripeHelper();
 
-        $user = $stripe->addCustomer($user);
+            $user = $stripe->addCustomer($user);
+
         Mail::to($user->email)->send(new SignupMail($user));
         return $user;
     }

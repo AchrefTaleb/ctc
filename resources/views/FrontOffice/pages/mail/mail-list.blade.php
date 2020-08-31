@@ -34,7 +34,7 @@
                             </thead>
                             <tbody>
                             @foreach($mails as $mail)
-                                <tr>
+                                <tr @if(!$mail->open) style="background-color: #f1f2f3 !important;" @endif>
                                     <td>
                                         #
                                     </td>

@@ -8,6 +8,7 @@ use App\Client;
 use App\Http\Requests\ClientRequest;
 use App\Http\Requests\ClientUpdateRequest;
 use App\Mail\newUserMail;
+use App\Mail\SignupMail;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -53,7 +54,7 @@ class ClientController extends Controller
         $user = $stripe->addCustomer($user);
 
        // $user->notify();
-       Mail::to($user->email)->send(new newUserMail($user)) ;
+        Mail::to($user->email)->send(new SignupMail($user));
 
         return back()->with('success','Votre client à été enregistré!');
     }

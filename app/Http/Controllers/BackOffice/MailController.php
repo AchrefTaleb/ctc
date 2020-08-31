@@ -81,7 +81,7 @@ class MailController extends Controller
         $mail = Mail::create($req);
 
         $mail->refresh();
-
+        // send email of new courrier
        return view('BackOffice.pages.mail.item-add',[
            "mail" => $mail
        ]);
