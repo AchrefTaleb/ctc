@@ -329,4 +329,21 @@ class stripeHelper
             return $e;
         }
     }
+
+    public function getSubscription($id)
+    {
+        try
+
+        {
+
+            $res = Subscription::retrieve(
+                $id
+            );
+
+            return $res;
+
+        }catch (Exception $e){
+            return $e;
+        }
+    }
 }
