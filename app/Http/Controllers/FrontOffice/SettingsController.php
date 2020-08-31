@@ -35,7 +35,7 @@ class SettingsController extends Controller
 
         return view('FrontOffice.pages.settings.profile',[
             "me" => $user,
-            "e"
+            "ends" => $ends,
         ]);
     }
 
