@@ -70,6 +70,7 @@
                     </div>
                 </div>
                 @if($ends)
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mt-3 "></div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mt-3 ">
                     <div class="widget widget-one_hybrid widget-blue">
                         <div class="widget-heading">
