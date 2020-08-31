@@ -320,7 +320,7 @@ class stripeHelper
                 'customer' => $user->stripe_id,
                 'amount' => $request->price * 100,
                 'currency' => 'eur',
-                'description' => 'paiement de envoi courrier ('.$request->mail->code.')',
+                'description' => 'paiement de envoi courrier ()',
             ]);
 
             return $res;
