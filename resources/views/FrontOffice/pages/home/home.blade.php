@@ -69,6 +69,19 @@
 
                     </div>
                 </div>
+                @if($ends)
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 ">
+                    <div class="widget widget-one_hybrid widget-blue">
+                        <div class="widget-heading">
+                            <div class="w-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>                            </div>
+                            <p class="w-value">{{ $ends }} <span class="float-right" style="font-weight: normal;"><a style="text-decoration: none;color: inherit" href="#">Fin de contract</a></span></p>
+
+                        </div>
+
+                    </div>
+                </div>
+                @endif
 
 
             </div>
