@@ -20,7 +20,7 @@ class   HomeController extends Controller
         $sub = Subscription::where('user_id',auth()->user()->id)->first();
 
         $res = $stripeHelper->getSubscription($sub->stripe_id);
-        dd($res);
+        dd($res->current_period_end);
 
         $nb_mails = Mail::where('user_id',auth()->user()->id)->get()->count();
         $nb_mails_today = Mail::where('user_id',auth()->user()->id)->whereDate('created_at', Carbon::today())->get()->count();
