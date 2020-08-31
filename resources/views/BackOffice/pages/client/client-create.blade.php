@@ -20,7 +20,7 @@
                         <form method="POST" action="{{ route('backoffice.client.store') }}" novalidate>
                             @csrf
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control @error('code') is-invalid @enderror " name="code" placeholder="Code" required>
+                                <input type="text" class="form-control @error('code') is-invalid @enderror " name="code" placeholder="N° de contract.." required>
 
                                 @error('code')
 

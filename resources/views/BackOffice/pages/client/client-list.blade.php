@@ -22,7 +22,7 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>code</th>
+                        <th>N° de contract</th>
                         <th>Prénom</th>
                         <th>Nom</th>
                         <th>Email</th>
