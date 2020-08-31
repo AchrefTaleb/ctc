@@ -197,7 +197,7 @@ class MailController extends Controller
         $stripeHelper = new stripeHelper();
 
         $charge_id =$stripeHelper->charge($user, $req,$request->post('stripeToken'));
-
+        dd($charge_id);
         if(!($charge_id instanceof Exception))
         {
             $req->stripe_charge_id = $charge_id->id;
