@@ -29,6 +29,10 @@ class MailController extends Controller
     public function show(Mail $mail)
     {
 
+        $mail->open = true;
+        $mail->save();
+        $mail->refresh();
+
 
         return view('FrontOffice.pages.mail.mail-show',[
             'mail' => $mail,
