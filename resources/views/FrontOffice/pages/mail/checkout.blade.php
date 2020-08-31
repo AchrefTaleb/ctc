@@ -85,8 +85,10 @@
     var elements = stripe.elements();
 
     var style = {
+        hidePostalCode: true,
         base: {
             // Add your base input styles here. For example:
+
             fontSize: '16px',
             color: '#32325d',
         },
