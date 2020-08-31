@@ -204,8 +204,9 @@ class MailController extends Controller
             $req->invoice = $charge_id->receipt_url;
             $req->status = 'executed';
             $req->save();
+            return redirect()->route('frontoffice.mail.request.list')->with('success','Votre paiement de réexpédition a été validé');
         }
 
-        return redirect()->route('frontoffice.mail.request.list')->with('success','Votre paiement de réexpédition a été validé');
+        return redirect()->route('frontoffice.mail.request.list')->with('error','dsl .....');
     }
 }
