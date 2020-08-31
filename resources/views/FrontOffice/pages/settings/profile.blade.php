@@ -36,7 +36,7 @@
                                 </li>
                                     @endif
                                     <li class="contacts-block__item">
-                                        Fin de contract: {{ \Carbon\Carbon::parse($ends)->format('d-m-Y') }}
+                                        <p class="text-warning">Fin de contract: {{ \Carbon\Carbon::parse($ends)->format('d-m-Y') }}</p>
                                     </li>
                             </ul>
                         </div>
