@@ -30,6 +30,6 @@ class SignupMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.backend.signup');
+        return $this->markdown('Emails.backend.signup');
     }
 }
