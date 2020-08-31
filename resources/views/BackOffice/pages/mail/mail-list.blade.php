@@ -41,7 +41,7 @@
                         <td>{{ $mail->code }}</td>
                         <td>{{ $mail->from ?? "-----" }}</td>
 
-                        <td><span class="bs-tooltip" data-placement="top" title="Tooltip on top">{{ $mail->client->code }}</span></td>
+                        <td><span class="bs-tooltip" data-placement="top" title="{{ $mail->client->name.' '.$mail->client->first_name }}">{{ $mail->client->code }}</span></td>
                         <td>{{ $mail->type ?? "-----" }}</td>
                         <td>{{ $mail->category->name ?? "-----" }}</td>
                         <td>{{ $mail->created_at->format('d-m-Y') ?? "-----" }}</td>
