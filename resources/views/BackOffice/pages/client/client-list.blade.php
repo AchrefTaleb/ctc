@@ -37,7 +37,7 @@
                     <tr>
 
                         <td>
-                            {{ $loop->index  }}
+                            {{ $loop->index + 1  }}
                         </td>
                         <td>{{ $client->code }}</td>
                         <td>{{ $client->name }}</td>

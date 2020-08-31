@@ -35,7 +35,7 @@
                     @foreach($mails as $mail)
                     <tr>
                         <td>
-                            #
+                            {{ $loop->index + 1  }}
                         </td>
                         <td>{{ $mail->code }}</td>
                         <td>{{ $mail->from ?? "-----" }}</td>

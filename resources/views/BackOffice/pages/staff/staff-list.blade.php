@@ -34,7 +34,7 @@
                     @foreach($staffs as $staff)
                     <tr>
                         <td>
-                            <span><img  src="{{ asset('media/BackOffice/img').'/'.$staff->photo }}" class="profile-img" alt="avatar"></span>
+                            {{ $loop->index + 1  }}
                         </td>
                         <td>{{ $staff->name }}</td>
                         <td>{{ $staff->last_name ?? "-----" }}</td>

@@ -37,7 +37,7 @@
                     @foreach($plans as $plan)
                     <tr>
                         <td>
-                            #
+                            {{ $loop->index + 1  }}
                         </td>
                         <td>{{ $plan->name }}</td>
                         <td>{{ $plan->opening_limit ?? "-----" }}</td>
