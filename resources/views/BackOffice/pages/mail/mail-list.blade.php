@@ -24,7 +24,7 @@
                         <th>#</th>
                         <th>Code</th>
                         <th>Expéditeur</th>
-                        <th>Destinataire</th>
+
                         <th>N° de contract</th>
                         <th>type</th>
                         <th>Catégorie</th>
@@ -40,8 +40,8 @@
                         </td>
                         <td>{{ $mail->code }}</td>
                         <td>{{ $mail->from ?? "-----" }}</td>
-                        <td>{{ $mail->client->name.' '.$mail->client->last_name }}</td>
-                        <td>{{ $mail->client->code }}</td>
+
+                        <td><span data-placement="top" title="Tooltip on top">{{ $mail->client->code }}</span></td>
                         <td>{{ $mail->type ?? "-----" }}</td>
                         <td>{{ $mail->category->name ?? "-----" }}</td>
                         <td>{{ $mail->created_at->format('d-m-Y') ?? "-----" }}</td>
