@@ -25,11 +25,10 @@
                         <th>Code</th>
                         <th>Expéditeur</th>
                         <th>Destinataire</th>
-                        <th>Code Client</th>
+                        <th>N° de contract</th>
                         <th>type</th>
                         <th>Catégorie</th>
                         <th>Date</th>
-                        <th>Description</th>
                         <th class="no-content">Action</th>
                     </tr>
                     </thead>
@@ -46,7 +45,7 @@
                         <td>{{ $mail->type ?? "-----" }}</td>
                         <td>{{ $mail->category->name ?? "-----" }}</td>
                         <td>{{ $mail->created_at->format('d-m-Y') ?? "-----" }}</td>
-                        <td><p>{{Str::limit($mail->description , 20, ' (...)')?? "-----" }}</p></td>
+
                        <td class="text-center">
                            <ul class="table-controls">
 
