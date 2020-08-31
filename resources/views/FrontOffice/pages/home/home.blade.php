@@ -62,7 +62,8 @@
                     <div class="widget widget-one_hybrid widget-followers">
                         <div class="widget-heading">
                             <div class="w-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>                            </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                            </div>
                             <p class="w-value">{{ $nb_notseen }} <span class="float-right" style="font-weight: normal;"><a href="{{ route('frontoffice.mail.list') }}">Courriers non lus</a></span></p>
 
                         </div>
@@ -75,7 +76,8 @@
                     <div class="widget widget-one_hybrid widget-blue">
                         <div class="widget-heading">
                             <div class="w-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-watch"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg>                            <p class="w-value">{{ Carbon\Carbon::parse($ends)->format('d-m-Y') }} <span class="float-right" style="font-weight: normal;"><a style="text-decoration: none;color: inherit" href="#">Fin de contract</a></span></p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-watch"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg></div>
+                                <p class="w-value">{{ Carbon\Carbon::parse($ends)->format('d-m-Y') }} <span class="float-right" style="font-weight: normal;"><a style="text-decoration: none;color: inherit" href="#">Fin de contract</a></span></p>
 
                         </div>
 
