@@ -27,7 +27,7 @@ class   HomeController extends Controller
             $res = $stripeHelper->getSubscription($sub->stripe_id);
             if(!($res instanceof Exception))
             {
-                $ends = Carbon::parse($res->current_period_end)->forHumans();
+                $ends = $res->current_period_end;
             }
 
 
