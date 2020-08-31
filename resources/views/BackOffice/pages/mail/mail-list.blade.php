@@ -25,6 +25,7 @@
                         <th>Code</th>
                         <th>Expéditeur</th>
                         <th>Destinataire</th>
+                        <th>Code Client</th>
                         <th>type</th>
                         <th>Catégorie</th>
                         <th>Date</th>
@@ -41,6 +42,7 @@
                         <td>{{ $mail->code }}</td>
                         <td>{{ $mail->from ?? "-----" }}</td>
                         <td>{{ $mail->client->name.' '.$mail->client->last_name }}</td>
+                        <td>{{ $mail->client->code }}</td>
                         <td>{{ $mail->type ?? "-----" }}</td>
                         <td>{{ $mail->category->name ?? "-----" }}</td>
                         <td>{{ $mail->created_at->format('d-m-Y') ?? "-----" }}</td>
