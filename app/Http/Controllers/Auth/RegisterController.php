@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Helpers\stripeHelper;
 use App\Http\Controllers\Controller;
+use App\Mail\SignupMail;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Cookie;
 
@@ -98,7 +100,7 @@ class RegisterController extends Controller
         $stripe = new stripeHelper();
 
         $user = $stripe->addCustomer($user);
-
+        Mail::to($user->email)->send(new SignupMail($user));
         return $user;
     }
 }
