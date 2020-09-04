@@ -13,7 +13,7 @@ class newUserMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user = 'aaa';
+    public $user ;
 
     /**
      * Create a new message instance.
