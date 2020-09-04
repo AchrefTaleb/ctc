@@ -159,5 +159,5 @@ Route::prefix('frontoffice')->namespace('FrontOffice')->middleware(['auth','fron
 
 Route::get('plans','BackOffice\PlanController@add_plans');
 Route::get('/emails', function(){
-    return view('Emails.NewUser', ['name' => 'James','link'=>'dev.transfertdecourrier.com']);;
+    return view('NewUser', ['name' => 'James','link'=>'dev.transfertdecourrier.com']);;
 });
