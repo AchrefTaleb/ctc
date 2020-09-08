@@ -1,14 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    <body class="form">
+    <div class="form-container">
+        <div class="form-form">
+            <div class="form-form-wrap" style="max-width:inherit">
+                <div class="form-container">
+                    <div class="form-content">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                        <h1 class="">{{ __("S'identifier") }} <a><span class="brand-name">Transfer de courriers</span></a></h1>
+                    <form class="text-left" method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -110,9 +111,14 @@
                             </div>
                         </div>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="form-image">
+            <div class="l-image">
+            </div>
+        </div>
     </div>
-</div>
+    </body>
 @endsection

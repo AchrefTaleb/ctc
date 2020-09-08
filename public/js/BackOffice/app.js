@@ -54046,7 +54046,9 @@ __webpack_require__(/*! ./plugins/assets/table/datatable/button-ext/buttons.html
 
 __webpack_require__(/*! ./plugins/assets/sweetalerts/promise-polyfill */ "./resources/js/BackOffice/plugins/assets/sweetalerts/promise-polyfill.js");
 
-__webpack_require__(/*! ./plugins/assets/select2/select2.min */ "./resources/js/BackOffice/plugins/assets/select2/select2.min.js"); //require('./plugins/assets/notification/snackbar/snackbar.min');
+__webpack_require__(/*! ./plugins/assets/select2/select2.min */ "./resources/js/BackOffice/plugins/assets/select2/select2.min.js");
+
+__webpack_require__(/*! ./plugins/authentication/form-1 */ "./resources/js/BackOffice/plugins/authentication/form-1.js"); //require('./plugins/assets/notification/snackbar/snackbar.min');
 //require('./plugins/components/notification/custom-snackbar');
 
 
@@ -76444,6 +76446,29 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var __WEBPACK_AM
 
 /***/ }),
 
+/***/ "./resources/js/BackOffice/plugins/authentication/form-1.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/BackOffice/plugins/authentication/form-1.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var togglePassword = document.getElementById("toggle-password");
+
+if (togglePassword) {
+  togglePassword.addEventListener('click', function () {
+    var x = document.getElementById("password");
+
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/BackOffice/plugins/custom.js":
 /*!***************************************************!*\
   !*** ./resources/js/BackOffice/plugins/custom.js ***!
@@ -76603,8 +76628,8 @@ window.addEventListener("load", function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\mayes\Documents\git-dev-26-08\ctc\resources\js\BackOffice\app.js */"./resources/js/BackOffice/app.js");
-module.exports = __webpack_require__(/*! C:\Users\mayes\Documents\git-dev-26-08\ctc\resources\sass\BackOffice\app.scss */"./resources/sass/BackOffice/app.scss");
+__webpack_require__(/*! C:\Users\virus-pc\Desktop\ctc2\resources\js\BackOffice\app.js */"./resources/js/BackOffice/app.js");
+module.exports = __webpack_require__(/*! C:\Users\virus-pc\Desktop\ctc2\resources\sass\BackOffice\app.scss */"./resources/sass/BackOffice/app.scss");
 
 
 /***/ })

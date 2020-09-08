@@ -16,6 +16,7 @@ class Mail extends Model
     public function category()
     {
         return $this->belongsTo('App\CategoryMail','category_mail_id','id');
+
     }
 
     public function items()
