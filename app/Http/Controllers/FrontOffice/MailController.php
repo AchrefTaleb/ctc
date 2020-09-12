@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\FrontOffice;
 
 use App\Client;
+use App\Helpers\mailOpening;
 use App\Helpers\stripeHelper;
 use App\Http\Controllers\Controller;
 use App\Mail;
 use App\Request as Req;
+use App\Subscription;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -17,17 +19,28 @@ class MailController extends Controller
     public function list()
     {
        // $this->authorize('mail-list', Mail::class);
-
+        $sub = Subscription::where('user_id',auth()->user()->id)->first();
+        $opening = new mailOpening($sub);
+        $opening = $opening->getOpening();
         $mails = Client::find(auth()->user()->id)->mails()->where('trash',false)->orderBy('created_at','desc')->get();
 
         return view('FrontOffice.pages.mail.mail-list',[
             "mails" => $mails,
+            "opening" => $opening
         ]);
     }
 
 
     public function show(Mail $mail)
     {
+        $sub = Subscription::where('user_id',auth()->user()->id)->first();
+        $opening = new mailOpening($sub);
+        $opening = $opening->getOpening();
+
+        if($opening != 'illimited' && $opening < 0)
+        {
+            redirect()->route('frontoffice.mail.list')->with('error',"Vous avez atteint votre limite d'ouvertures");
+        }
 
         $mail->open = true;
         $mail->save();
@@ -61,10 +74,14 @@ class MailController extends Controller
     {
 
         $mails = Client::find(auth()->user()->id)->mails()->where('trash',true)->orderBy('created_at','desc')->get();
+        $sub = Subscription::where('user_id',auth()->user()->id)->first();
+        $opening = new mailOpening($sub);
+        $opening = $opening->getOpening();
        // $mails = Mail::where('trash',true)->orderBy('created_at','desc')->get();
 
         return view('FrontOffice.pages.mail.mail-trash',[
             "mails" => $mails,
+            "opening" => $opening
         ]);
     }
 
@@ -106,10 +123,14 @@ class MailController extends Controller
     {
 
         $mails = Client::find(auth()->user()->id)->mails()->where('archive',true)->orderBy('created_at','desc')->get();
+        $sub = Subscription::where('user_id',auth()->user()->id)->first();
+        $opening = new mailOpening($sub);
+        $opening = $opening->getOpening();
         // $mails = Mail::where('trash',true)->orderBy('created_at','desc')->get();
 
         return view('FrontOffice.pages.mail.mail-archive',[
             "mails" => $mails,
+            "opening" => $opening
         ]);
     }
 

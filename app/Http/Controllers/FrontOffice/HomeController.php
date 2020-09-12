@@ -21,9 +21,6 @@ class   HomeController extends Controller
         $ends = false;
         $stripeHelper = new stripeHelper();
         $sub = Subscription::where('user_id',auth()->user()->id)->first();
-        $opening = new mailOpening($sub);
-
-
 
         if($sub)
         {
