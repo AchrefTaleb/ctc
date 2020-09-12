@@ -16,8 +16,11 @@ class mailOpening
 
     public function __construct(Subscription $subscription)
     {
-        $opening = ($subscription->plan->opening_limit - Mail::where('created_at','>=',Carbon::now()->subMonth()->month)->where('open',true)->count());
 
+        $opening = ($subscription->plan->opening_limit - Mail::where('created_at','>=',Carbon::now()->subMonth()->month)->where('open',true)->count());
+        if($subscription->plan->opening_limit == -1){
+            $opening = 'illimited';
+        }
         dd($opening);
     }
 
