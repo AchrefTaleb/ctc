@@ -70,8 +70,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Adresse') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="adresse"  class="form-control @error('adresse') is-invalid @enderror" name="adresse" value="{{ old('adresse') }}" required autocomplete="adresse" autofocus>
-                                </textarea>
+                                <textarea id="adresse"  class="form-control @error('adresse') is-invalid @enderror" name="adresse"  required autocomplete="adresse" autofocus>{{ old('adresse') }}</textarea>
                                 @error('adresse')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
