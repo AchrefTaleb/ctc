@@ -25,6 +25,8 @@ Route::get('/home',  function () {
     return  redirect()->route('login');
 })->name('home');
 
+Route::get('/subs','HomeController@index');
+
 Auth::routes();
 
 Route::prefix('backoffice')->namespace('BackOffice')->middleware(['auth','backoffice'])->group(function(){
