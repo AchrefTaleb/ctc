@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\FrontOffice;
 
+use App\Helpers\mailOpening;
 use App\Helpers\stripeHelper;
 use App\Http\Controllers\Controller;
 use App\Subscription;
@@ -20,6 +21,8 @@ class   HomeController extends Controller
         $ends = false;
         $stripeHelper = new stripeHelper();
         $sub = Subscription::where('user_id',auth()->user()->id)->first();
+        $opening = new mailOpening($sub);
+
 
 
         if($sub)
