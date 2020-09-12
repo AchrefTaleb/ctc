@@ -37,7 +37,7 @@ class MailController extends Controller
         $opening = new mailOpening($sub);
         $opening = $opening->getOpening();
 
-        if(($opening !== 'illimited') && ($opening <= 0))
+        if(($opening !== 'illimited') && ($opening <= 0) && (!$mail->open))
         {
           return  redirect()->route('frontoffice.mail.list')->with('error',"Vous avez atteint votre limite d'ouvertures");
         }
