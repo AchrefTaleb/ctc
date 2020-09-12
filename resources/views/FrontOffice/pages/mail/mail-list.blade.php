@@ -49,6 +49,7 @@
                                     <td><p>{{Str::limit($mail->description , 20, ' (...)')?? "-----" }}</p></td>
                                     <td class="text-center">
                                         @if($opening == 'illimited' or $opening > 0)
+                                            {{ $opening > 0 }}
                                         <ul class="table-controls">
 
 
