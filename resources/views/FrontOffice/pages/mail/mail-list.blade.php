@@ -48,7 +48,7 @@
                                     <td>{{ $mail->created_at->format('d-m-Y') ?? "-----" }}</td>
                                     <td><p>{{Str::limit($mail->description , 20, ' (...)')?? "-----" }}</p></td>
                                     <td class="text-center">
-                                        @if(($opening > 0) or ($opening == 'illimited'))
+                                        @if(($opening > 0) or ($opening === 'illimited'))
                                         <ul class="table-controls">
 
 
