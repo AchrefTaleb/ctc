@@ -9,6 +9,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MailRequest;
 use App\Item;
 use App\Mail;
+use App\Mail\expeditionPriceMail;
+use App\Mail\expeditionSentMail;
+use App\Mail\newMailMail;
+use Illuminate\Support\Facades\Mail as Maill;
 use App\User;
 use App\Request as Req;
 use Carbon\Carbon;
@@ -81,6 +85,13 @@ class MailController extends Controller
         $mail = Mail::create($req);
 
         $mail->refresh();
+        $user = User::find($request->user_id);
+        if($request->type == "mail" ){
+            Maill::to($user->email)->send(new newMailMail($user));
+        }else{
+            Maill::to($user->email)->send(new newPackageMail($user));
+        }
+
         // send email of new courrier
        return view('BackOffice.pages.mail.item-add',[
            "mail" => $mail
@@ -286,6 +297,8 @@ class MailController extends Controller
         $req->status = 'approved';
         $req->save();
 
+        Maill::to($req->client->email)->send(new expeditionPriceMail($req->client, $req));
+
         return back()->with('success','Prix associé à la demande avec succès');
 
     }
@@ -302,6 +315,8 @@ class MailController extends Controller
 
         $req->status = 'sent';
         $req->save();
+
+        Maill::to($req->client->email)->send(new expeditionSentMail($req->client, $req));
 
         return back()->with('success','Demande marquée comme envoyée');
     }

@@ -5,10 +5,12 @@ namespace App\Http\Controllers\BackOffice;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StaffRequest;
 use App\Http\Requests\StaffUpdateRequest;
+use App\Mail\newStaffMail;
 use App\Staff;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail ;
 
 class StaffController extends Controller
 {
@@ -45,7 +47,7 @@ class StaffController extends Controller
 
         $user->assignRole('backoffice');
         $user->assignRole('staff');
-
+        Mail::to($user->email)->send(new newStaffMail($user));
 
        return back()->with('success','Votre membre de staff à été enregistré avec succés!');
     }
