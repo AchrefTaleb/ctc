@@ -42,7 +42,7 @@
                                     </td>
                                     <td>{{ $mail->code }}</td>
                                     <td>{{ $mail->from ?? "-----" }}</td>
-                                    <td><span class="badge-primary">{{ $mail->client->id }}</span>{{ $mail->client->name.' '.$mail->client->last_name }}</td>
+                                    <td>{{ $mail->client->id }}</span>{{ $mail->client->name.' '.$mail->client->last_name }}</td>
                                     <td>{{ $mail->type ?? "-----" }}</td>
                                     <td>{{ $mail->category->name ?? "-----" }}</td>
                                     <td>{{ $mail->created_at->format('d-m-Y') ?? "-----" }}</td>
