@@ -81,8 +81,9 @@
 
 @section('script')
 <script>
-    var stripe = Stripe('pk_test_51HGpAqEWB4pgk6TU37er7K0ygwEGjbOGnm0BO7iSW7y6yf4cpXMuA7ZKf0P2ASLItYkZcAryOdQfzz97BWmYVhRn009UznytLw');
-    var elements = stripe.elements();
+   // var stripe = Stripe('pk_test_51HGpAqEWB4pgk6TU37er7K0ygwEGjbOGnm0BO7iSW7y6yf4cpXMuA7ZKf0P2ASLItYkZcAryOdQfzz97BWmYVhRn009UznytLw');
+   var stripe = Stripe('{{ config('app.STRIPE_PUBLIC_KEY') }}');
+   var elements = stripe.elements();
 
     var style = {
         hidePostalCode: true,
