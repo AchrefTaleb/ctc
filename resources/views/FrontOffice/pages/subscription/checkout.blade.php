@@ -92,8 +92,7 @@
 
 @section('script')
 <script>
-   // var stripe = Stripe('pk_test_51HGpAqEWB4pgk6TU37er7K0ygwEGjbOGnm0BO7iSW7y6yf4cpXMuA7ZKf0P2ASLItYkZcAryOdQfzz97BWmYVhRn009UznytLw');
-    var stripe = Stripe('{{ config('app.STRIPE_PUBLIC_KEY') }}');
+    var stripe = Stripe('{{env("STRIPE_PUBLIC_KEY","pk_test_zx1MGcQV6DrzQZNOI2nqSGNt00sTteKMoU")}}');
     var elements = stripe.elements();
 
     var style = {
