@@ -20,7 +20,7 @@
                         <form method="POST" action="{{ route('backoffice.client.store') }}" novalidate>
                             @csrf
                             <div class="form-group mb-3">
-                                <span class="wpcf7-list-item-label">En cochant cette case vous déclarez avoir pris connaissance et accepté les <a href="https://transfertdecourrier.com/informations/" target="_blank">Conditions Générales de Vente et d'Utilisation</a>.</span>
+
                                 <input type="text" class="form-control @error('code') is-invalid @enderror " name="code" placeholder="N° de contract.." required>
 
                                 @error('code')
