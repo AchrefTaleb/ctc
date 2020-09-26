@@ -118,7 +118,7 @@ class PlanController extends Controller
                     'tiers_mode' => 'volume',
                     'currency' => 'EUR',
                     'interval' => 'month',
-                    'interval_count' => 3,
+                    'interval_count' => 1,
                     'product' => ['name' => $plan->name.' 3 mois'],
                     'amount' => $plan->m3_price * 100,
 
@@ -133,7 +133,7 @@ class PlanController extends Controller
                     'tiers_mode' => 'volume',
                     'currency' => 'EUR',
                     'interval' => 'month',
-                    'interval_count' => 6,
+                    'interval_count' => 1,
                     'product' => ['name' => $plan->name.' 6 mois'],
                     'amount' => $plan->m6_price * 100,
 
@@ -148,7 +148,7 @@ class PlanController extends Controller
                     'tiers_mode' => 'volume',
                     'currency' => 'EUR',
                     'interval' => 'month',
-                    'interval_count' => 9,
+                    'interval_count' => 1,
                     'product' => ['name' => $plan->name.' 9 mois'],
                     'amount' => $plan->m9_price * 100,
 
@@ -163,7 +163,7 @@ class PlanController extends Controller
                     'tiers_mode' => 'volume',
                     'currency' => 'EUR',
                     'interval' => 'month',
-                    'interval_count' => 12,
+                    'interval_count' => 1,
                     'product' => ['name' => $plan->name.' 12 mois'],
                     'amount' => $plan->m12_price * 100,
 

@@ -82,6 +82,7 @@ class SubscriptionController extends Controller
 
                 $sub->user_id = auth()->user()->id;
                 $sub->stripe_id = $res->id;
+                $sub->commitment = (int)str_replace('m','',$request->post('option'));
                 $sub->plan_id = $plan->id;
                 $sub->status = 1;
 
