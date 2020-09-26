@@ -47,7 +47,7 @@ class PromoController extends Controller
 
         if($stripe_id){
             $promo = new promo();
-            $promo->code_promo = $request->post('code');
+            $promo->promo_code = $request->post('code');
             $promo->months = $request->post('months');
             $promo->reduction = $request->post('reduction');
             $promo->stripe_id = $stripe_id;
