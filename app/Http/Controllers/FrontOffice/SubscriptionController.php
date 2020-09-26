@@ -63,12 +63,12 @@ class SubscriptionController extends Controller
         ]);
         $promo = null;
         if($request->post('promo')){
-            $promo = promo::where('promo_code',$request->post('promo'))->get();
+            $promo = promo::where('promo_code',$request->post('promo'))->first();
             if(!$promo){
                 $promo = null;
             }
         }
-        dd($promo);
+
         $plan = Plan::findOrFail($request->post('plan'));
 
         $stripeHelper = new stripeHelper();
