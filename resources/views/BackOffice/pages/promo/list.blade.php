@@ -24,6 +24,7 @@
                                 <th>#</th>
                                 <th>Code</th>
                                 <th>Durée (mois)</th>
+                                <th>Reduction (%)</th>
                                 <th>Date de création</th>
                              </tr>
                             </thead>
@@ -35,6 +36,7 @@
                                     </td>
                                     <td>{{ $promo->promo_code }}</td>
                                     <td>{{ $promo->months}}</td>
+                                    <td>{{ $promo->reduction}}</td>
                                     <td>{{ $promo->created_at }}</td>
                                 </tr>
 
