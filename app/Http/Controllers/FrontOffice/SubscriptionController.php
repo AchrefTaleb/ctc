@@ -6,6 +6,7 @@ use App\Client;
 use App\Helpers\stripeHelper;
 use App\Http\Controllers\Controller;
 use App\Plan;
+use App\promo;
 use App\Request as Req;
 use App\Subscription;
 use Exception;
@@ -58,11 +59,14 @@ class SubscriptionController extends Controller
         $this->validate($request,[
             'stripeToken' => "required",
             'plan' => "required",
+            'cgvu' => "required",
         ]);
         $promo = null;
         if($request->post('promo')){
-            // fetch promo from database
-            $promo = "xyzpromo";
+            $promo = promo::where('promo_code',$request->post('promo'))->get();
+            if(!$promo){
+                $promo = null;
+            }
         }
         $plan = Plan::findOrFail($request->post('plan'));
 

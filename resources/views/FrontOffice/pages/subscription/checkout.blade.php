@@ -25,6 +25,15 @@
                             @csrf
                             <input type="hidden" name="plan" value="{{ $plan->id }}">
                             <input type="hidden" name="option" value="{{ $option }}">
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control @error('code') is-invalid @enderror " name="code" placeholder="code promo..">
+
+                                @error('code')
+
+                                <small id="" class="form-text  text-danger"> {{ $message }}</small>
+
+                                @enderror
+                            </div>
                         <div class="inv-detail">
 
                             <div id="card-element">
@@ -34,7 +43,15 @@
                             <!-- Used to display Element errors. -->
                             <div id="card-errors" role="alert"></div>
                         </div>
+                            <div class="form-group mb-3">
+                                <input type="checkbox" class="form-control @error('cgvu') is-invalid @enderror " name="cgvu" required>
 
+                                @error('cgvu')
+
+                                <small id="" class="form-text  text-danger"> {{ $message }}</small>
+
+                                @enderror
+                            </div>
                         <div class="inv-action">
 
                             <button type="submit" class="btn btn-danger">Acheter</button>
