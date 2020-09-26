@@ -26,9 +26,9 @@
                             <input type="hidden" name="plan" value="{{ $plan->id }}">
                             <input type="hidden" name="option" value="{{ $option }}">
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control @error('code') is-invalid @enderror " name="code" placeholder="code promo..">
+                                <input type="text" class="form-control @error('promo') is-invalid @enderror " name="promo" placeholder="code promo..">
 
-                                @error('code')
+                                @error('promo')
 
                                 <small id="" class="form-text  text-danger"> {{ $message }}</small>
 
