@@ -83,8 +83,8 @@ class SubscriptionController extends Controller
                     'quantity' => 1,
                 ]
             ];
-           $res =  $stripeHelper->addSubscription(auth()->user(),$p,$promo);
-           dd($res);
+           $res =  $stripeHelper->addSubscription(auth()->user(),$p,$promo->stripe_id);
+
             if(!($res instanceof Exception))
             {
                 $sub = new Subscription();
