@@ -117,6 +117,8 @@ Route::prefix('backoffice')->namespace('BackOffice')->middleware(['auth','backof
      *
      */
     Route::get('/promo/list','PromoController@list')->name('backoffice.promo.list');
+    Route::get('/promo/create','PromoController@addPromo')->name('backoffice.promo.create');
+    Route::get('/promo/store','PromoController@store')->name('backoffice.promo.store');
 
 });
 

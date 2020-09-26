@@ -324,7 +324,17 @@ class stripeHelper
             'usd' => $usd
         ];
     }
+    public function addPromo($reduction,$months,$code){
 
+        $res = Coupon::create([
+            'name' => $code,
+            'percent_off' => $reduction,
+            'duration' => 'forever',
+            'redeem_by' => now()->addMonths($months)->toDateTimeString(),
+        ]);
+
+       return $res->id;
+    }
     public function charge($user, $request, $token)
     {
 
