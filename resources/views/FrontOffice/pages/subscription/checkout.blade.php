@@ -34,6 +34,7 @@
 
                                 @enderror
                             </div>
+                            <hr/>
                         <div class="inv-detail">
 
                             <div id="card-element">
