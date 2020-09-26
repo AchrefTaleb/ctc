@@ -16,9 +16,7 @@
 
                         <div class="acc-total-info" style="border: none">
                             <h5>{{ $subscription->plan->name }}</h5>
-                            <p class="text-center">{{ $subscription->plan->description }}</p>
                             <p class="text-center"> vous avez un engagemment de {{ $subscription->commitment }} mois </p>
-                            <p class="text-center"><span class="small ">{{ $subscription->plan->note }}</span></p>
                         </div>
                     </div>
                 </div>

@@ -59,7 +59,11 @@ class SubscriptionController extends Controller
             'stripeToken' => "required",
             'plan' => "required",
         ]);
-
+        $promo = null;
+        if($request->post('promo')){
+            // fetch promo from database
+            $promo = "xyzpromo";
+        }
         $plan = Plan::findOrFail($request->post('plan'));
 
         $stripeHelper = new stripeHelper();
@@ -75,7 +79,7 @@ class SubscriptionController extends Controller
                     'quantity' => 1,
                 ]
             ];
-           $res =  $stripeHelper->addSubscription(auth()->user(),$p);
+           $res =  $stripeHelper->addSubscription(auth()->user(),$p,$promo);
             if(!($res instanceof Exception))
             {
                 $sub = new Subscription();
@@ -94,7 +98,7 @@ class SubscriptionController extends Controller
                 return back()->with('error','Un problème est survenu!');
             }
         }
-
+        return back()->with('error','Un problème est survenu!');
     }
 
     public function user_plan()

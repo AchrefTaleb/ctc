@@ -69,26 +69,44 @@ class stripeHelper
     }
 
 
-    public function addSubscription($user, $plans )
+    public function addSubscription($user, $plans, $promo = null )
     {
         $res ='';
         $ins =null;
         $adv =null;
         try {
 
-                $res =  Subscription::create([
-                    'customer' => $user->stripe_id,
-                    'metadata' => [
-                        'name' => 'clinique chomedy',
-                    ],
-                    'items' => $plans,
-                   // 'collection_method' => 'send_invoice',
-                   // 'days_until_due' => 30,
-                  //  $ins != null ?? 'add_invoice_items' => [ $ins->id,]
+                if($promo != null){
+                    $res =  Subscription::create([
+                        'customer' => $user->stripe_id,
+                        'metadata' => [
+                            'name' => 'clinique chomedy',
+                        ],
+                        'items' => $plans,
+                        'coupon' => $promo,
+                        // 'collection_method' => 'send_invoice',
+                        // 'days_until_due' => 30,
+                        //  $ins != null ?? 'add_invoice_items' => [ $ins->id,]
 
 
 
-                ]);
+                    ]);
+                }else{
+                    $res =  Subscription::create([
+                        'customer' => $user->stripe_id,
+                        'metadata' => [
+                            'name' => 'clinique chomedy',
+                        ],
+                        'items' => $plans,
+                        // 'collection_method' => 'send_invoice',
+                        // 'days_until_due' => 30,
+                        //  $ins != null ?? 'add_invoice_items' => [ $ins->id,]
+
+
+
+                    ]);
+                }
+
 
 
 

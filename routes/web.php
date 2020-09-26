@@ -111,6 +111,12 @@ Route::prefix('backoffice')->namespace('BackOffice')->middleware(['auth','backof
     Route::get('profile','SettingsController@profile')->name('backoffice.profile');
     Route::post('password','SettingsController@password')->name('backoffice.password');
 
+    /*
+     *
+     *  Promos
+     *
+     */
+    Route::get('/promo/list','PromoController@list')->name('backoffice.promo.list');
 
 });
 
