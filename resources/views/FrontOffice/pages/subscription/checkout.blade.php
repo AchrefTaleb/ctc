@@ -44,8 +44,9 @@
                             <div id="card-errors" role="alert"></div>
                         </div>
                             <div class="form-group mb-3">
-                                <span class="wpcf7-list-item-label">En cochant cette case vous déclarez avoir pris connaissance et accepté les <a href="https://transfertdecourrier.com/informations/" target="_blank">Conditions Générales de Vente et d'Utilisation</a>.</span>
                                 <input type="checkbox" class="form-control @error('cgvu') is-invalid @enderror " name="cgvu" required>
+                                <span class="wpcf7-list-item-label">En cochant cette case vous déclarez avoir pris connaissance et accepté les <a href="https://transfertdecourrier.com/informations/" target="_blank">Conditions Générales de Vente et d'Utilisation</a>.</span>
+
 
                                 @error('cgvu')
 
