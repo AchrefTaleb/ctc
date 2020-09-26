@@ -330,7 +330,7 @@ class stripeHelper
             'name' => $code,
             'percent_off' => $reduction,
             'duration' => 'forever',
-            'redeem_by' => now()->addMonths($months)->toDateTimeString(),
+            'redeem_by' => now()->addMonths($months)->timestamp,
         ]);
 
        return $res->id;
