@@ -24,7 +24,7 @@
                                 <th>#</th>
                                 <th>Code</th>
                                 <th>Durée (mois)</th>
-                                <th>Date @default création</th>
+                                <th>Date de création</th>
                              </tr>
                             </thead>
                             <tbody>
