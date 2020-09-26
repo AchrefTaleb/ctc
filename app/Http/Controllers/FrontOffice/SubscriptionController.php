@@ -68,6 +68,7 @@ class SubscriptionController extends Controller
                 $promo = null;
             }
         }
+        dd($promo);
         $plan = Plan::findOrFail($request->post('plan'));
 
         $stripeHelper = new stripeHelper();
