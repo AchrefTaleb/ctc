@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PromoController extends Controller
 {
-    public function index()
+    public function list()
     {
         $promo = promo::all();
         $promos = $promo->filter(function ($value) {
