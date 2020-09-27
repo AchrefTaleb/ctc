@@ -12,6 +12,7 @@ use App\Mail;
 use App\Mail\expeditionPriceMail;
 use App\Mail\expeditionSentMail;
 use App\Mail\newMailMail;
+use App\Mail\newPackageMail;
 use Illuminate\Support\Facades\Mail as Maill;
 use App\User;
 use App\Request as Req;
