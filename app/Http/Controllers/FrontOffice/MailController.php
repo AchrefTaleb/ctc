@@ -178,7 +178,7 @@ class MailController extends Controller
 
         $mails = $request->post('mails');
        // $mail = Mail::findOrFail($request->post('mail'));
-
+        dd($mails);
         $req= new Req();
 
         $req->user_id  = auth()->user()->id;
@@ -186,6 +186,7 @@ class MailController extends Controller
       //  $req->mail_id = 0;
         $req->adresse = $request->post('adresse');
         $req->save();
+        $req->refresh();
         $req->mails()->attach($mails);
 
         return redirect()->route('frontoffice.mail.request.list')->with('success','Votre demande a été sauvgardé!');
