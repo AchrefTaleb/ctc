@@ -33,6 +33,6 @@ class expeditionPriceMail extends Mailable
      */
     public function build()
     {
-        return $this->from('noreply@ctc.com')->markdown('Emails.backend.expeditionprice');
+        return $this->from('support@transfertdecourrier.com')->markdown('Emails.backend.expeditionprice');
     }
 }
