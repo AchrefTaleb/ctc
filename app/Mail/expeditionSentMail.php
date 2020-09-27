@@ -34,6 +34,6 @@ class expeditionSentMail extends Mailable
      */
     public function build()
     {
-        return $this->from('support@transfertdecourrier.com')->markdown('Emails.backend.expeditionsent');
+        return $this->from('support@transfertdecourrier.com')->subject('Demande de réexpédition')->markdown('Emails.backend.expeditionsent');
     }
 }

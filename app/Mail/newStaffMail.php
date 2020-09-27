@@ -33,6 +33,6 @@ class newStaffMail extends Mailable
      */
     public function build()
     {
-        return $this->from('support@transfertdecourrier.com')->markdown('Emails.backend.newstaff');
+        return $this->from('support@transfertdecourrier.com')->subject('Creation de compte CTC')->markdown('Emails.backend.newstaff');
     }
 }

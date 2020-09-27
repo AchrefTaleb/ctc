@@ -32,6 +32,6 @@ class SubRemainderMail extends Mailable
      */
     public function build()
     {
-        return $this->from('support@transfertdecourrier.com')->markdown('Emails.backend.subremainder');
+        return $this->from('support@transfertdecourrier.com')->subject('Rappel')->markdown('Emails.backend.subremainder');
     }
 }

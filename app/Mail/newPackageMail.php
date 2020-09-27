@@ -31,6 +31,6 @@ class newPackageMail extends Mailable
      */
     public function build()
     {
-        return $this->from('support@transfertdecourrier.com')->markdown('Emails.backend.newpackage');
+        return $this->from('support@transfertdecourrier.com')->subject('Nouveau colis')->markdown('Emails.backend.newpackage');
     }
 }

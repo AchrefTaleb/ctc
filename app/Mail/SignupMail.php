@@ -30,6 +30,6 @@ class SignupMail extends Mailable
      */
     public function build()
     {
-        return $this->from('support@transfertdecourrier.com')->markdown('Emails.backend.signup',[ 'user' => $this->user]);
+        return $this->from('support@transfertdecourrier.com')->subject('Bienvenue chez CTC')->markdown('Emails.backend.signup',[ 'user' => $this->user]);
     }
 }

@@ -30,6 +30,6 @@ class newMailMail extends Mailable
      */
     public function build()
     {
-        return $this->from('support@transfertdecourrier.com')->markdown('Emails.backend.newmail');
+        return $this->from('support@transfertdecourrier.com')->subject('Nouveau courrier')->markdown('Emails.backend.newmail');
     }
 }

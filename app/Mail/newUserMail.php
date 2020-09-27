@@ -35,7 +35,7 @@ class newUserMail extends Mailable
         $token = app(PasswordBroker::class)->createToken($this->user);
         $link = route('password.reset',[$token]);
 
-        return $this->from('support@transfertdecourrier.com')->markdown('Emails.NewUser',[
+        return $this->from('support@transfertdecourrier.com')->subject('Bienvenue chez CTC')->markdown('Emails.NewUser',[
             "link" => $link,
             'name' => $this->user->name
 
