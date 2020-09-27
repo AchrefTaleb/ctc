@@ -8,7 +8,7 @@
                 <div class="form-container">
                     <div class="form-content">
 
-                        <h3 class="">{{ __("Vérifer votre email") }} <a><span class="brand-name">votre email</span></a></h3>
+                        <h1 class="">{{ __("Vérifer") }} <a><span class="brand-name">votre email</span></a></h1>
                         <form method="POST" class="text-left" action="{{ route('password.email') }}">
                             @csrf
 
