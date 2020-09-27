@@ -11,7 +11,7 @@ class PromoController extends Controller
 {
     public function list()
     {
-        $promo = promo::where('stripe_id','!=', null)->get();
+        $promo = promo::whereHas('stripe_id')->get();
         $promos = $promo->filter(function ($value) {
             return now()->diffInMonths($value->created_at) < $value->months;
         });
