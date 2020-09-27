@@ -42,7 +42,7 @@
                         <td>{{ $mail->from ?? "-----" }}</td>
 
                         <td><span class="bs-tooltip" data-placement="top" title="{{ $mail->client->name.' '.$mail->client->last_name }}">{{ $mail->client->code }}</span></td>
-                        <td>{{ $mail->type ?? "-----" }}</td>
+                        <td>@if($mail->type == "mail") Courrier  @else Colis  @endif</td>
                         <td>{{ $mail->category->name ?? "-----" }}</td>
                         <td>{{ $mail->created_at->format('d-m-Y') ?? "-----" }}</td>
 
