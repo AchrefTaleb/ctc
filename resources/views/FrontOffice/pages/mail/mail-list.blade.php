@@ -43,8 +43,7 @@
                                     <td>{{ $mail->code }}</td>
                                     <td>{{ $mail->from ?? "-----" }}</td>
                                     <td>{{ $mail->client->id }} - {{ $mail->client->name.' '.$mail->client->last_name }}</td>
-                                    <td>{{ $mail->type ?? "-----" }}</td>
-                                    <td>{{ $mail->category->name ?? "-----" }}</td>
+                                    <td>@if($mail->type == "mail") Courrier  @else Colis  @endif</td>                                    <td>{{ $mail->category->name ?? "-----" }}</td>
                                     <td>{{ $mail->created_at->format('d-m-Y') ?? "-----" }}</td>
                                     <td><p>{{Str::limit($mail->description , 20, ' (...)')?? "-----" }}</p></td>
                                     <td class="text-center">
