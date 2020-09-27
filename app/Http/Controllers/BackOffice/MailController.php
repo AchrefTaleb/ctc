@@ -75,7 +75,7 @@ class MailController extends Controller
 
     public function create(MailRequest $request)
     {
-        dd($request->all());
+
         $this->authorize('mail-create', Mail::class);
 
         $req = $request->all();
