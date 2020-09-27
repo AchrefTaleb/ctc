@@ -81,7 +81,7 @@
             <div class="form-container">
                 <div class="form-content">
 
-                    <h1 class="">{{ __("S'identifier") }} <a><span class="brand-name">Transfer de courriers</span></a></h1>
+                    <h1 class="">{{ __("S'identifier") }} <a><span class="brand-name">Transfert de courrier</span></a></h1>
                     <p class="signup-link">Nouveau ici? <a href="{{ route('register') }}">Créer un compte</a></p>
                     <form class="text-left" method="POST" action="{{ route('login') }}">
                         @csrf
