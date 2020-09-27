@@ -8,7 +8,7 @@
                 <div class="form-container">
                     <div class="form-content">
 
-                        <h1 class="">{{ __("Saisir vitre adresse email") }} <a><span class="brand-name"></span></a></h1>
+                        <h1 class="">{{ __("Réinitialiser le mot de passe") }} <a><span class="brand-name"></span></a></h1>
                         <form class="text-left" method="POST" action="{{ route('password.update') }}">
                             @csrf
 
