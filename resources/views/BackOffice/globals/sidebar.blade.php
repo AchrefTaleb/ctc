@@ -110,7 +110,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </div>
                 </a>
-                <ul class="collapse submenu list-unstyled  @if((Route::currentRouteName() == 'backoffice.staff.list')||(Route::currentRouteName() == 'backoffice.profile') ) show  @endif " id="settings" data-parent="#promo">
+                <ul class="collapse submenu list-unstyled  @if((Route::currentRouteName() == 'backoffice.promo.list')||(Route::currentRouteName() == 'backoffice.promo.create') ) show  @endif " id="promo" data-parent="#promo">
                     @can('staff-list')
                     <li class="menu">
                         <a href="{{ route('backoffice.staff.list') }}">
