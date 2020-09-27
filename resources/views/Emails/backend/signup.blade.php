@@ -5,7 +5,7 @@ Nous vous remercions de nous avoir fait confiance en choisissant le centre de tr
 Votre inscription à bien été prise en compte, elle sera validée dès réception de votre paiement bancaire.
 Vous pourrez alors vous connecter sur votre espace client via notre site avec le mot de passe que vous avez choisi et l’identifiant ci dessous:
 
-Votre identifiant : {{ $user->mail }}
+Votre identifiant : {{ $user->email }}
 
 @component('mail::button', ['url' => config('app.APP_URL')])
 Connectez-vous
