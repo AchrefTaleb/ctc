@@ -113,7 +113,7 @@
                 <ul class="collapse submenu list-unstyled  @if((Route::currentRouteName() == 'backoffice.promo.list')||(Route::currentRouteName() == 'backoffice.promo.create') ) show  @endif " id="promo" data-parent="#promo">
                     @can('staff-list')
                     <li class="menu">
-                        <a href="{{ route('backoffice.staff.list') }}">
+                        <a href="{{ route('backoffice.promo.list') }}">
                           Liste des codes
                         </a>
                     </li>
