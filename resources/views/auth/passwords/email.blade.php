@@ -8,12 +8,12 @@
                 <div class="form-container">
                     <div class="form-content">
 
-                        <h1 class="">{{ __("Vérifer votre email") }} <a><span class="brand-name"></span></a></h1>
+                        <h3 class="">{{ __("Vérifer votre email") }} <a><span class="brand-name"></span></a></h3>
                         <form method="POST" class="text-left" action="{{ route('password.email') }}">
                             @csrf
 
                             <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('adresse email') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -29,7 +29,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Send Password Reset Link') }}
+                                        {{ __("Evoyer l'e-mail de récupération") }}
                                     </button>
                                 </div>
                             </div>
