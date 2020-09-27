@@ -376,7 +376,7 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                                <span class="small warning" >
+                                <span class="small" style="color: #cf8d00;" >
                                     *le mot de passe doit comporter 8 caractères minimum.
                                 </span>
                                 @error('password')
