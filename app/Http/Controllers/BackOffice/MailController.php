@@ -86,7 +86,7 @@ class MailController extends Controller
 
         $mail->refresh();
         $user = User::find($request->user_id);
-        if($request->type == "mail" ){
+        if($request->post('type') == "mail" ){
             Maill::to($user->email)->send(new newMailMail($user));
         }else{
             Maill::to($user->email)->send(new newPackageMail($user));
