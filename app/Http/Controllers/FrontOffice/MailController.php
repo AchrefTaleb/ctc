@@ -186,7 +186,7 @@ class MailController extends Controller
         $req->adresse = $request->post('adresse');
         $req->save();
         $req->refresh();
-        $req->mails()->attach([6]);
+        $req->mails()->syncWithoutDetaching([6]);
 
         return redirect()->route('frontoffice.mail.request.list')->with('success','Votre demande a été sauvgardé!');
 
