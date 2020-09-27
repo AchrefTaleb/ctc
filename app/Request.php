@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Request extends Model
 {
 
-    public function mail()
-    {
-        return $this->belongsTo('App\Mail','mail_id','id');
-    }
 
     public function client()
     {
