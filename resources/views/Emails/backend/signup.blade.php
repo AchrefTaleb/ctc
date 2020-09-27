@@ -8,7 +8,7 @@ Vous pourrez alors vous connecter sur votre espace client via notre site avec le
 Votre identifiant : {{ $user->mail }}
 
 @component('mail::button', ['url' => config('app.APP_URL')])
-
+Connectez-vous
 @endcomponent
 
 Vous pouvez également à tout moment modifier votre mot de passe en vous connectant dans votre espace client dans la rubrique: “paramètre - profil”.
