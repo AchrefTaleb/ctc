@@ -119,7 +119,11 @@ class MailController extends Controller
         ]);
 
         $mail = Mail::findOrFail($request->post('id'));
-        $items = $mail->items()->each()->delete();
+        $items = $mail->items;
+
+        foreach ($items as $item){
+            $item->delete();
+        }
         $mail->delete();
 
         return back()->with('success','Votre courrier à été supprimé!');
