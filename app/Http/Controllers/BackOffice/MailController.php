@@ -122,6 +122,11 @@ class MailController extends Controller
         $items = $mail->items;
 
         foreach ($items as $item){
+            $digitals = $item->digitals;
+            foreach ($digitals as $dig)
+            {
+                $dig->delete();
+            }
             $item->delete();
         }
         $mail->delete();
