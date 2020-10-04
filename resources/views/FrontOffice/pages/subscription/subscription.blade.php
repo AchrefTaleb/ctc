@@ -53,7 +53,7 @@
                             <tr>
                                 <td>{{ $invoice->id }}</td>
                                 <td>{{ new \Carbon\Carbon($invoice->created) }}</td>
-                                <td>{{ Carbon::parse($invoice->created)->addMonths($subscription->commitment) }}</td>
+                                <td>{{ \Carbon\Carbon::parse($invoice->created)->addMonths($subscription->commitment) }}</td>
                                 <td><a href="{{ $invoice->invoice_pdf }}">Télécharger pdf</a></td>
                             </tr>
                             @endforeach
