@@ -24,7 +24,7 @@
                                 <th><div class="th-content">Courriers</div></th>
                                 <th><div class="th-content">Client</div></th>
                                 <th><div class="th-content">adresse</div></th>
-                                <th><div class="th-content th-heading">Price(€)</div></th>
+                                <th><div class="th-content th-heading">Prix(€)</div></th>
                                 <th><div class="th-content">Status</div></th>
                                 <th><div class="th-content">Action</div></th>
                             </tr>

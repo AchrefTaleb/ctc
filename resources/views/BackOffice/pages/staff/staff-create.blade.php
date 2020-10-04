@@ -54,7 +54,7 @@
                                 @enderror
                             </div>
 
-                            <button type="submit" class="btn btn-primary mt-3 float-right ">Submit</button>
+                            <button type="submit" class="btn btn-primary mt-3 float-right ">Valider</button>
                             <a class="btn btn-dark mt-3 mr-2 float-right " href="{{ route('backoffice.staff.list') }}">Fermer</a>                        </form>
                     </div>
                 </div>
