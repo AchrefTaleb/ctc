@@ -15,7 +15,7 @@ class HomeController extends Controller
    public function index()
    {
        $nb_clients = User::role('client')->count();
-       $nb_clients_today = Client::whereDate('created_at', Carbon::today())->get()->count();
+       $nb_clients_today = User::role('client')->whereDate('created_at', Carbon::today())->get()->count();
 
        $nb_mails = Mail::all()->count();
        $nb_mails_today = Mail::whereDate('created_at', Carbon::today())->get()->count();
