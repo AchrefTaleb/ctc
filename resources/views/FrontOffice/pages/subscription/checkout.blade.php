@@ -27,7 +27,7 @@
                             <input type="hidden" name="option" value="{{ $option }}">
 
                             <hr/>
-                        <div class="detail">
+                        <div class="inv-detail">
 
                             <div id="card-element">
                                 <!-- A Stripe Element will be inserted here. -->
@@ -35,6 +35,10 @@
 
                             <!-- Used to display Element errors. -->
                             <div id="card-errors" role="alert"></div>
+                        </div>
+                        <div class="inv-action">
+
+
                         </div>
                             <div class="form-group mb-3" style="display: flex;">
                                 <input type="checkbox" style="width: 55px;height: calc(1.0em + 0.75rem + 2px);" class="form-control @error('cgvu') is-invalid @enderror " name="cgvu" required>
@@ -47,10 +51,7 @@
 
                                 @enderror
                             </div>
-                        <div class="inv-action">
 
-
-                        </div>
 
                     </div>
                 </div>
