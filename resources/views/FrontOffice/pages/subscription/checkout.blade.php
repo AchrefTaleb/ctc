@@ -85,7 +85,7 @@
                             </div>
                         </div>
 
-                        <div v-if="reduction" class="inv-detail">
+                        <div  class="inv-detail">
                             <div class="info-detail-1">
                                 <p>Plan mensuel</p>
                                 @if($option == 'm3')
@@ -99,7 +99,7 @@
                                 @endif
 
                             </div>
-                            <div class="info-detail-2">
+                            <div v-if="reduction" class="info-detail-2">
                                 <p>Reduction mensuel</p>
                                 <p>@{{ reduction }}</p>
 
