@@ -75,10 +75,10 @@ class MailController extends Controller
     {
         $this->authorize('mail-create', Mail::class);
 
-        $clients = User::role('client')->where('code','like',auth()->user()->id.'-%')->get();
+        $clients = User::role('client')->where('code','like',auth()->user()->id.'-%')->whereNotNull('code')->get();
 
         if(auth()->user()->hasRole('admin')){
-            $clients = User::role('client')->get();
+            $clients = User::role('client')->whereNotNull('code')->get();
         }
         $categories = CategoryMail::all();
 
