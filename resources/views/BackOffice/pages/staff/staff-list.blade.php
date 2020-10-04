@@ -21,7 +21,7 @@
                 <table id="staff-table" class="multi-table table table-striped style-3 table-bordered table-hover non-hover" style="width:100%">
                     <thead>
                     <tr>
-                        <th>#</th>
+                        <th>code</th>
                         <th>Prénom</th>
                         <th>Nom</th>
                         <th>Email</th>
@@ -34,7 +34,7 @@
                     @foreach($staffs as $staff)
                     <tr>
                         <td>
-                            {{ $loop->index + 1  }}
+                            {{ $staff->id }}
                         </td>
                         <td>{{ $staff->name }}</td>
                         <td>{{ $staff->last_name ?? "-----" }}</td>
