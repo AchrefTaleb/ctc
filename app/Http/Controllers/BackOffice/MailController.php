@@ -41,7 +41,7 @@ class MailController extends Controller
     {
         $this->authorize('mail-list', Mail::class);
 
-        $mails = Mail::where('trash',true)->orderBy('created_at','desc')->get();
+        $mails = Mail::where('trash',true)->where('code','like',auth()->user()->id.'-%')->orderBy('created_at','desc')->get();
 
         return view('BackOffice.pages.mail.mail-trash',[
             "mails" => $mails,
@@ -52,7 +52,7 @@ class MailController extends Controller
     {
         $this->authorize('mail-list', Mail::class);
 
-        $mails = Mail::where('archive',true)->orderBy('created_at','desc')->get();
+        $mails = Mail::where('archive',true)->where('code','like',auth()->user()->id.'-%')->orderBy('created_at','desc')->get();
 
         return view('BackOffice.pages.mail.mail-archive',[
             "mails" => $mails,
@@ -63,7 +63,7 @@ class MailController extends Controller
     {
         $this->authorize('mail-create', Mail::class);
 
-        $clients = User::role('client')->get();
+        $clients = User::role('client')->where('code','like',auth()->user()->id.'-%')->get();
         $categories = CategoryMail::all();
 
         return view('BackOffice.pages.mail.mail-create',[
