@@ -124,6 +124,9 @@ class SubscriptionController extends Controller
     {
         $promo = promo::wherePromo_code($request->post('code'))->first();
 
-        dd($promo);
+        if($promo){
+            return response()->json($promo->reduction,200);
+        }
+        return response()->json(0,200);
     }
 }
