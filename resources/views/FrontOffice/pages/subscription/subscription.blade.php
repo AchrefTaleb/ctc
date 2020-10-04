@@ -43,7 +43,8 @@
                             <thead>
                             <tr>
                                 <th>Code</th>
-                                <th>Date</th>
+                                <th>Date Creation</th>
+                                <th>Date fin contrat</th>
                                 <th>PDF</th>
                             </tr>
                             </thead>
@@ -52,6 +53,7 @@
                             <tr>
                                 <td>{{ $invoice->id }}</td>
                                 <td>{{ new \Carbon\Carbon($invoice->created) }}</td>
+                                <td>{{ Carbon::parse($invoice->created)->addMonths($subscription->commitment) }}</td>
                                 <td><a href="{{ $invoice->invoice_pdf }}">Télécharger pdf</a></td>
                             </tr>
                             @endforeach
