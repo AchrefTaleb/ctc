@@ -27,7 +27,7 @@
                             <input type="hidden" name="option" value="{{ $option }}">
 
                             <hr/>
-                        <div class="inv-detail">
+                        <div class="detail">
 
                             <div id="card-element">
                                 <!-- A Stripe Element will be inserted here. -->
