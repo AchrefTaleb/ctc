@@ -75,7 +75,7 @@
                             <p class="text-center"><span class="small ">{{ $plan->note }}</span></p>
                             <hr>
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control @error('promo') is-invalid @enderror " name="promo" placeholder="code promo..">
+                                <input type="text" v-model="codePromo" @change="getReduction" class="form-control @error('promo') is-invalid @enderror " name="promo" placeholder="code promo..">
 
                                 @error('promo')
 
@@ -187,7 +187,9 @@
 
                 },
                 methods: {
-
+                    getReduction(){
+                        this.codePromo++;
+                    }
                 },
 
                 watch: {},
