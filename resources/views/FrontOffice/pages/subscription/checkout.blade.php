@@ -188,7 +188,7 @@
                 },
                 methods: {
                     getReduction(){
-                        this.codePromo++;
+                        this.reduction++;
                     }
                 },
 
