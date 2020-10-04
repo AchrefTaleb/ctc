@@ -188,7 +188,24 @@
                 },
                 methods: {
                     getReduction(){
-                        this.reduction++;
+
+                        let formData = new  FormData();
+
+                        formData.append('code',this.promoCode);
+
+                        axios.post('{{ route('getreduction') }}',
+                            formData,
+                            {
+                                errorHandle: false,
+                                headers:{
+                                    'Content-Type': 'multipart/form-data'
+                                }
+                            }).then( response => {
+
+                            console.log(response.data);
+                        }).catch(error => {
+                            console.log(error.data);
+                        });
                     }
                 },
 

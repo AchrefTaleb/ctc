@@ -119,4 +119,11 @@ class SubscriptionController extends Controller
             'invoices' => $res->data,
         ]);
     }
+
+    public function getReduction(Request $request)
+    {
+        $promo = promo::whereCode($request->post('code'))->get();
+
+        dd($promo);
+    }
 }

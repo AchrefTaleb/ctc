@@ -165,6 +165,8 @@ Route::prefix('frontoffice')->namespace('FrontOffice')->middleware(['auth','fron
 
     });
 
+    Route::post('getreduction','SubscriptionController@getReduction')->name('getreduction');
+
 });
 
 Route::get('plans','BackOffice\PlanController@add_plans');
