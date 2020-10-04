@@ -32,6 +32,10 @@ class MailController extends Controller
 
         $mails = Mail::where('trash',false)->where('code','like',auth()->user()->id.'-%')->orderBy('created_at','desc')->get();
 
+        if(auth()->user()->hasRole('admin')){
+            $mails = Mail::where('trash',false)->orderBy('created_at','desc')->get();
+        }
+
         return view('BackOffice.pages.mail.mail-list',[
             "mails" => $mails,
         ]);
@@ -42,6 +46,10 @@ class MailController extends Controller
         $this->authorize('mail-list', Mail::class);
 
         $mails = Mail::where('trash',true)->where('code','like',auth()->user()->id.'-%')->orderBy('created_at','desc')->get();
+
+        if(auth()->user()->hasRole('admin')){
+            $mails = Mail::where('trash',true)->orderBy('created_at','desc')->get();
+        }
 
         return view('BackOffice.pages.mail.mail-trash',[
             "mails" => $mails,
@@ -54,6 +62,10 @@ class MailController extends Controller
 
         $mails = Mail::where('archive',true)->where('code','like',auth()->user()->id.'-%')->orderBy('created_at','desc')->get();
 
+        if(auth()->user()->hasRole('admin')){
+            $mails = Mail::where('archive',true)->orderBy('created_at','desc')->get();
+        }
+
         return view('BackOffice.pages.mail.mail-archive',[
             "mails" => $mails,
         ]);
@@ -64,6 +76,10 @@ class MailController extends Controller
         $this->authorize('mail-create', Mail::class);
 
         $clients = User::role('client')->where('code','like',auth()->user()->id.'-%')->get();
+
+        if(auth()->user()->hasRole('admin')){
+            $clients = User::role('client')->get();
+        }
         $categories = CategoryMail::all();
 
         return view('BackOffice.pages.mail.mail-create',[
