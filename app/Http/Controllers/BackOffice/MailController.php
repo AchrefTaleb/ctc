@@ -82,7 +82,12 @@ class MailController extends Controller
         $req = $request->all();
         $now = Carbon::now();
       //  $code = 'CT'.$now->format('dmy').'-'.$now->format('hms');
-        $code = auth()->user()->id.'-'.$request->user_id.'-'.rand(10,99).'-'.'01';
+        $client = Client::findOrFail($request->user_id);
+        if(!$client->code){
+            return back()->with('error','Contrat de client pas encore signé');
+        }
+        $code_staff = explode('-',$client->code)[0];
+        $code = $code_staff.'-'.$request->user_id.'-'.(Mail::all()->last()->id+1);
         $req['code'] = $code;
         $mail = Mail::create($req);
 
