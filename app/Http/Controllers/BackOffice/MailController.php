@@ -87,7 +87,7 @@ class MailController extends Controller
             return back()->with('error','Contrat de client pas encore signé');
         }
         $code_staff = explode('-',$client->code)[0];
-        $code = $code_staff.'-'.$request->user_id.'-'.(Mail::all()->last()->id+1);
+        $code = $code_staff.'-'.$request->user_id.'-'.(Mail::last()->id+1);
         $req['code'] = $code;
         $mail = Mail::create($req);
 
