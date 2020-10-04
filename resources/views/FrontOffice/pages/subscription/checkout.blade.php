@@ -6,7 +6,8 @@
 
 
     <div class="row sales col-md-12">
-
+        <form id="payment-form" method="post" action="{{route('frontoffice.subscription.charge')}}">
+            @csrf
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 layout-spacing">
 
             <div class="widget widget-account-invoice-one">
@@ -21,19 +22,10 @@
                         <div class="acc-total-info">
                             <h5>information de la carte</h5>
                         </div>
-                        <form id="payment-form" method="post" action="{{route('frontoffice.subscription.charge')}}">
-                            @csrf
+
                             <input type="hidden" name="plan" value="{{ $plan->id }}">
                             <input type="hidden" name="option" value="{{ $option }}">
-                            <div class="form-group mb-3">
-                                <input type="text" class="form-control @error('promo') is-invalid @enderror " name="promo" placeholder="code promo..">
 
-                                @error('promo')
-
-                                <small id="" class="form-text  text-danger"> {{ $message }}</small>
-
-                                @enderror
-                            </div>
                             <hr/>
                         <div class="inv-detail">
 
@@ -57,9 +49,9 @@
                             </div>
                         <div class="inv-action">
 
-                            <button type="submit" class="btn btn-danger">Acheter</button>
+
                         </div>
-                        </form>
+
                     </div>
                 </div>
 
@@ -94,6 +86,15 @@
                                 @elseif($option == 'm12')
                                     <p>{{ $plan->m12_price }} €</p>
                                 @endif
+                                <div class="form-group mb-3">
+                                    <input type="text" class="form-control @error('promo') is-invalid @enderror " name="promo" placeholder="code promo..">
+
+                                    @error('promo')
+
+                                    <small id="" class="form-text  text-danger"> {{ $message }}</small>
+
+                                    @enderror
+                                </div>
                             </div>
 
                         </div>
@@ -104,7 +105,8 @@
 
             </div>
         </div>
-
+            <button type="submit" class="btn btn-danger">Acheter</button>
+        </form>
 
     </div>
 
@@ -158,4 +160,27 @@
         form.submit();
     }
 </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const app = new Vue({
+                el: '#appV',
+                data: {
+
+                },
+                created() {
+
+                },
+                mounted() {
+
+                },
+                methods: {
+
+                },
+
+                watch: {},
+
+            });
+        });
+    </script>
+
 @endsection
