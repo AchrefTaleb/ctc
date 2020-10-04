@@ -72,6 +72,15 @@
                             <h5>{{ $plan->name }}</h5>
                             <p class="text-center">{{ $plan->description }}</p>
                             <p class="text-center"><span class="small ">{{ $plan->note }}</span></p>
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control @error('promo') is-invalid @enderror " name="promo" placeholder="code promo..">
+
+                                @error('promo')
+
+                                <small id="" class="form-text  text-danger"> {{ $message }}</small>
+
+                                @enderror
+                            </div>
                         </div>
 
                         <div class="inv-detail">
@@ -86,15 +95,7 @@
                                 @elseif($option == 'm12')
                                     <p>{{ $plan->m12_price }} €</p>
                                 @endif
-                                <div class="form-group mb-3">
-                                    <input type="text" class="form-control @error('promo') is-invalid @enderror " name="promo" placeholder="code promo..">
 
-                                    @error('promo')
-
-                                    <small id="" class="form-text  text-danger"> {{ $message }}</small>
-
-                                    @enderror
-                                </div>
                             </div>
 
                         </div>
