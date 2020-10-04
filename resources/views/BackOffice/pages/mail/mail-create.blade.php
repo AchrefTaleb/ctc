@@ -33,7 +33,7 @@
                                 <label>Client:</label>
                                 <select  class="form-control sclient @error('user_id') is-invalid @enderror" name="user_id" >
                                     @foreach($clients as $client)
-                                        <option value="{{ $client->id }}"> {{ $client->name.' '.$client->last_name }}</option>
+                                        <option value="{{ $client->id }}"> {{ $client->code.' '.$client->name.' '.$client->last_name }}</option>
                                     @endforeach
                                 </select>
                                 @error('user_id')
