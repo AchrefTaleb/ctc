@@ -6,6 +6,7 @@ use App\Client;
 use App\Http\Controllers\Controller;
 use App\Mail;
 use App\Request as Req;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class HomeController extends Controller
 {
    public function index()
    {
-       $nb_clients = Client::all()->count();
+       $nb_clients = User::role('client')->count();
        $nb_clients_today = Client::whereDate('created_at', Carbon::today())->get()->count();
 
        $nb_mails = Mail::all()->count();
