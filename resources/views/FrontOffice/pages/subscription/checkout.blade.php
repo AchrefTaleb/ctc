@@ -191,7 +191,7 @@
 
                         let formData = new  FormData();
 
-                        formData.append('code',this.promoCode);
+                        formData.append('code',this.codePromo);
 
                         axios.post('{{ route('getreduction') }}',
                             formData,
