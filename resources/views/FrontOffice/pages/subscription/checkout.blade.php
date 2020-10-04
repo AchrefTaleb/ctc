@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="widget-content">
-                    <div class="invoice-box">
+                    <div id="appcheckout" class="invoice-box">
 
                         <div class="acc-total-info">
                             <h5>{{ $plan->name }}</h5>
@@ -97,6 +97,11 @@
                                 @elseif($option == 'm12')
                                     <p>{{ $plan->m12_price }} €</p>
                                 @endif
+
+                            </div>
+                            <div class="info-detail-2">
+                                <p>Reduction mensuel</p>
+                                <p>@{{ reduction }}</p>
 
                             </div>
 
@@ -169,9 +174,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const app = new Vue({
-                el: '#appV',
+                el: '#appcheckout',
                 data: {
-
+                    codePromo:'',
+                    reduction:0,
+                    price: {{ $plan->m3_price  }},
                 },
                 created() {
 
