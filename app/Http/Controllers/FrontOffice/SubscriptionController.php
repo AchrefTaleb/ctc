@@ -122,7 +122,7 @@ class SubscriptionController extends Controller
 
     public function getReduction(Request $request)
     {
-        $promo = promo::wherePromo_code($request->post('code'))->get();
+        $promo = promo::wherePromo_code($request->post('code'))->first();
 
         dd($promo);
     }
