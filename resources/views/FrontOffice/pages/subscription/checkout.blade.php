@@ -6,7 +6,7 @@
 
 
     <div class="row sales col-md-12">
-        <form id="payment-form" method="post" action="{{route('frontoffice.subscription.charge')}}">
+        <form class="row" id="payment-form" method="post" action="{{route('frontoffice.subscription.charge')}}">
             @csrf
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 layout-spacing">
 
@@ -72,6 +72,7 @@
                             <h5>{{ $plan->name }}</h5>
                             <p class="text-center">{{ $plan->description }}</p>
                             <p class="text-center"><span class="small ">{{ $plan->note }}</span></p>
+                            <hr>
                             <div class="form-group mb-3">
                                 <input type="text" class="form-control @error('promo') is-invalid @enderror " name="promo" placeholder="code promo..">
 
@@ -106,7 +107,10 @@
 
             </div>
         </div>
-            <button type="submit" class="btn btn-danger">Acheter</button>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-danger" style="width: 90%;margin-left: 5%">Acheter</button>
+            </div>
+
         </form>
 
     </div>
