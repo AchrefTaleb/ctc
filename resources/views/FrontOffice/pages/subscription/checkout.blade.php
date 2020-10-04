@@ -85,7 +85,7 @@
                             </div>
                         </div>
 
-                        <div class="inv-detail">
+                        <div v-if="reduction" class="inv-detail">
                             <div class="info-detail-1">
                                 <p>Plan mensuel</p>
                                 @if($option == 'm3')
@@ -202,7 +202,7 @@
                                 }
                             }).then( response => {
 
-                            console.log(response.data);
+                            this.reduction = response.data();
                         }).catch(error => {
                             console.log(error.data);
                         });
