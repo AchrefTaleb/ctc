@@ -30,7 +30,7 @@ class MailController extends Controller
         // add filter
         $this->authorize('mail-list', Mail::class);
 
-        $mails = Mail::where('trash',false)->orderBy('created_at','desc')->get();
+        $mails = Mail::where('trash',false)->where('code','like',auth()->user()->id.'-%')->orderBy('created_at','desc')->get();
 
         return view('BackOffice.pages.mail.mail-list',[
             "mails" => $mails,
