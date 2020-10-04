@@ -202,7 +202,7 @@
                                 }
                             }).then( response => {
 
-                            this.reduction = response.data();
+                            this.reduction = response.data;
                         }).catch(error => {
                             console.log(error.data);
                         });
