@@ -22,16 +22,7 @@ class   HomeController extends Controller
         $stripeHelper = new stripeHelper();
         $sub = Subscription::where('user_id',auth()->user()->id)->first();
 
-        if($sub)
-        {
-            $res = $stripeHelper->getSubscription($sub->stripe_id);
-            if(!($res instanceof Exception))
-            {
-                $ends = $res->current_period_end;
-            }
-
-
-        }
+      $ends = Carbon::parse($sub->created_at)->addMonths($sub->commitment)->format('d-m-Y');
 
 
         $nb_mails = Mail::where('user_id',auth()->user()->id)->get()->count();
