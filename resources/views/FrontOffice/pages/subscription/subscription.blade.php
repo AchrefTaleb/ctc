@@ -52,8 +52,8 @@
                             @foreach($invoices as $invoice)
                             <tr>
                                 <td>{{ $invoice->id }}</td>
-                                <td>{{ \Carbon\Carbon::parse($invoice->created)->format('Y-m-d') }}</td>
-                                <td>{{ \Carbon\Carbon::parse($invoice->created)->addMonths($subscription->commitment)->format('Y-m-d') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($invoice->created)->format('d-m-y') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($invoice->created)->addMonths($subscription->commitment)->format('d-m-y') }}</td>
                                 <td><a href="{{ $invoice->invoice_pdf }}">Télécharger pdf</a></td>
                             </tr>
                             @endforeach
