@@ -96,7 +96,7 @@
                                 <p>@{{ reduction }} %</p>
 
                             </div>
-                            <div v-if="reduction" class="info-detail-3">
+                            <div  class="info-detail-3">
                                 <p>Total</p>
                                 <p>@{{ reduction + price }} %</p>
 
