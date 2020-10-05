@@ -88,7 +88,7 @@
                         <div  class="inv-detail">
                             <div class="info-detail-1">
                                 <p>Plan mensuel</p>
-                                <p>@{{ price }}</p>
+                                <p>@{{ price }} €</p>
 
                             </div>
                             <div v-if="reduction" class="info-detail-2">
@@ -98,7 +98,7 @@
                             </div>
                             <div  class="info-detail-3">
                                 <p>Total</p>
-                                <p>@{{ reduction + price }} %</p>
+                                <p>@{{ price - ((reduction * price) / 100) }} €</p>
 
                             </div>
 
