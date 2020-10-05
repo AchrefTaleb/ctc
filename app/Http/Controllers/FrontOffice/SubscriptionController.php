@@ -64,7 +64,7 @@ class SubscriptionController extends Controller
         $promo = null;
         if($request->post('promo')){
             $promo = promo::where('promo_code',$request->post('promo'))->first();
-            if(!$promo){
+            if(!$promo || (now()->diffInMonths($promo->created_at) > $promo->months)){
                 $promo = null;
             }
         }
@@ -124,7 +124,7 @@ class SubscriptionController extends Controller
     {
         $promo = promo::wherePromo_code($request->post('code'))->first();
 
-        if($promo){
+        if($promo &&(now()->diffInMonths($promo->created_at) < $promo->months) ){
             return response()->json($promo->reduction,200);
         }
         return response()->json(0,200);
