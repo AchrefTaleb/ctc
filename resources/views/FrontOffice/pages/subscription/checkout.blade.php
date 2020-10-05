@@ -88,20 +88,17 @@
                         <div  class="inv-detail">
                             <div class="info-detail-1">
                                 <p>Plan mensuel</p>
-                                @if($option == 'm3')
-                                    <p>{{ $plan->m3_price }} €</p>
-                                @elseif($option == 'm6')
-                                    <p>{{ $plan->m6_price }} €</p>
-                                @elseif($option == 'm9')
-                                    <p>{{ $plan->m9_price }} €</p>
-                                @elseif($option == 'm12')
-                                    <p>{{ $plan->m12_price }} €</p>
-                                @endif
+                                <p>@{{ price }}</p>
 
                             </div>
                             <div v-if="reduction" class="info-detail-2">
                                 <p>Reduction mensuel</p>
                                 <p>@{{ reduction }} %</p>
+
+                            </div>
+                            <div v-if="reduction" class="info-detail-3">
+                                <p>Total</p>
+                                <p>@{{ reduction + price }} %</p>
 
                             </div>
 
@@ -178,7 +175,15 @@
                 data: {
                     codePromo:'',
                     reduction:0,
-                    price: {{ $plan->m3_price  }},
+                        @if($option == 'm3')
+                             price:{{ $plan->m3_price }}
+                        @elseif($option == 'm6')
+                            price: {{ $plan->m6_price }}
+                        @elseif($option == 'm9')
+                            price: {{ $plan->m9_price }}
+                        @elseif($option == 'm12')
+                            price: {{ $plan->m12_price }}
+                        @endif
                 },
                 created() {
 
