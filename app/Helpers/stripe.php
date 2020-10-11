@@ -23,7 +23,7 @@ class stripeHelper
 
     public function __construct()
     {
-        $this->key = env("STRIPE_KEY","sk_test_zsMm2WUvxTSsB5F9mZ3FG20S00hb1XFUiF");
+        $this->key = env("STRIPE_KEY","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");
 
         $this->stripe = Stripe::setApiKey($this->key);
         // $this->stripe->setApiKey($this->key);

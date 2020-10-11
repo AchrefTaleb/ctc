@@ -122,7 +122,7 @@
 
 @section('script')
 <script>
-    var stripe = Stripe('{{env("STRIPE_PUBLIC_KEY","pk_test_zx1MGcQV6DrzQZNOI2nqSGNt00sTteKMoU")}}');
+    var stripe = Stripe('{{env("STRIPE_PUBLIC_KEY","pk_live_51Ha5OiIlJJXmPswok7NxDpklwfVsQBjIdUF0dnHdmt7oQDIe1tmAW12lAUEL5nyVxulCZm1tpIDGxOkAmB1cNpuk00UMP0TeMq")}}');
     var elements = stripe.elements();
 
     var style = {
