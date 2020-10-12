@@ -47,7 +47,7 @@
                         <td>{{ $client->email ?? "-----" }}</td>
                         <td>{{ $client->phone ?? "-----" }}</td>
                         <td>{{ $client->adresse ?? "-----" }}</td>
-                        <td>@if($client->status) <span class="shadow-none badge badge-primary">Active</span> @else <span class="shadow-none badge badge-danger">Suspendu</span> @endif</td>
+                        <td> {{ $client->subscription }}@if($client->status) <span class="shadow-none badge badge-primary">Active</span> @else <span class="shadow-none badge badge-danger">Suspendu</span> @endif</td>
                         <td> @if($client->subscription) {{ $client->subscription->created_at->format('m-y') ?? '' }} / {{ $client->subscription->commitment ?? '' }} @else  --- @endif </td>
                        <td class="text-center">
                            <ul class="table-controls">
