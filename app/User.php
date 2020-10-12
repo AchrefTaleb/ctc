@@ -42,6 +42,9 @@ class User extends Authenticatable implements Authorizable
         'email_verified_at' => 'datetime',
     ];
 
-
+    public function subscription()
+    {
+        return $this->hasOne('App\Subscription','user_id','id');
+    }
 
 }
