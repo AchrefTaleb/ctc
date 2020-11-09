@@ -77,7 +77,7 @@ class ClientController extends Controller
 
         $staff->update($request->only(['name','last_name','email','phone','code','adresse']));
 
-        return back()->with('success','Votre client à été modifié! fqgvgyvutuugyuyh');
+        return back()->with('success','Votre client à été modifié! ');
     }
 
     public function delete(Request $request)
@@ -98,7 +98,7 @@ class ClientController extends Controller
     {
         $this->validate($request,[
             'id' => 'required',
-            'type' => 'contract'
+            'type' => 'required'
         ]);
 
         $user = User::findOrFail($request->post('id'));
