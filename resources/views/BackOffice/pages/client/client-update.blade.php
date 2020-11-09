@@ -3,7 +3,36 @@
 @section('content')
 
     <div class="row col-md-12 layout-top-spacing layout-spacing">
+        @if(!$client->contract)
+        <div class="col-md-12">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 inline">
+                            <h4 class="float-left">Activer le contract de: {{ $client->name.' '.$client->last_name }}</h4>
+                        </div>
+                        <div class="col-md-12">
+                            <hr/>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-content widget-content-area">
+                    <div class="table-responsive mb-4">
+                        <form method="POST" action="" novalidate>
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $client->id }}">
+                            <input type="hidden" name="type" value="contract">
+                            <div class="form-group mb-3">
+                               <button type="submit" class="btn btn-info"> Lancer l'activation de contrat</button>
+                            </div>
 
+                            <a class="btn btn-dark mt-3 mr-2 float-right " href="{{ route('backoffice.client.list') }}">Fermer</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
         <div class="col-md-12">
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
