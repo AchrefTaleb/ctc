@@ -54,6 +54,7 @@ Route::prefix('backoffice')->namespace('BackOffice')->middleware(['auth','backof
 
     Route::get('/client/update/{user}','ClientController@formupdate')->name('backoffice.client.updateform');
     Route::post('/client/update','ClientController@update')->name('backoffice.client.update');
+    Route::post('/client/contract','ClientController@activateContract')->name('backoffice.client.contract');
 
     Route::post('/client/delete','ClientController@delete')->name('backoffice.client.delete');
 

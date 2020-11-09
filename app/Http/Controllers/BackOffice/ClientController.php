@@ -93,5 +93,19 @@ class ClientController extends Controller
         return back()->with('success','Votre client à été supprimé!');
 
     }
+
+    public function activateContract(Request $request)
+    {
+        $this->validate($request,[
+            'id' => 'required',
+            'type' => 'contract'
+        ]);
+
+        $user = User::findOrFail($request->post('id'));
+
+        $user->contract = true;
+
+        return back()->with('success','Validation de contrat enrigistreé !');
+    }
 }
 

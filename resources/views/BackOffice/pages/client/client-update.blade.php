@@ -4,7 +4,6 @@
 
     <div class="row col-md-12 layout-top-spacing layout-spacing">
         @if(!$client->contract)
-            <h1>{{ $client->contract }}</h1>
         <div style="text-align: center;" class="col-md-12 mb-5">
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
@@ -19,7 +18,7 @@
                 </div>
                 <div class="widget-content widget-content-area">
                     <div class="table-responsive mb-4">
-                        <form method="POST" action="" novalidate>
+                        <form method="POST" action="{{ route('backoffice.client.contract') }}" novalidate>
                             @csrf
                             <input type="hidden" name="id" value="{{ $client->id }}">
                             <input type="hidden" name="type" value="contract">
