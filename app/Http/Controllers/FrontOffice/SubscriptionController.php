@@ -132,6 +132,10 @@ class SubscriptionController extends Controller
 
 
     public function contract(){
+
+        if(auth()->user()->contract){
+            return redirect()->route('frontoffice.subscription.create');
+        }
         return view('FrontOffice.pages.subscription.contract');
     }
 }
