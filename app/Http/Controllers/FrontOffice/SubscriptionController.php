@@ -19,6 +19,9 @@ class SubscriptionController extends Controller
 
     public function index()
     {
+        if(!auth()->user()->contract){
+            return redirect()->route('frontoffice.subscription.contract');
+        }
         $plans = Plan::where('user_id',auth()->user()->id)->get();
 
         if(count($plans) <= 0) {
