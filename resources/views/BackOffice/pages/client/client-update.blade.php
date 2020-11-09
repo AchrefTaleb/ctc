@@ -25,7 +25,7 @@
                             <div class="form-group mb-3">
                                <button type="submit" class="btn btn-info"> Lancer l'activation de contrat</button>
                             </div>
-                            <hr>
+
                             <a class="btn btn-dark mt-3 mr-2 float-right " href="{{ route('backoffice.client.list') }}">Fermer</a>
                         </form>
                     </div>
