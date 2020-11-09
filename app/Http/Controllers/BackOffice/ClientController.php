@@ -105,6 +105,8 @@ class ClientController extends Controller
 
         $user->contract = true;
 
+        $user->save();
+
         return back()->with('success','Validation de contrat enrigistreé !');
     }
 }
