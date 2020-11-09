@@ -126,6 +126,7 @@ Route::prefix('backoffice')->namespace('BackOffice')->middleware(['auth','backof
 Route::prefix('frontoffice')->namespace('FrontOffice')->middleware(['auth','frontoffice'])->group(function(){
 
     // subscription
+    Route::get('subscription/create','SubscriptionController@contract')->middleware('hassubscription')->name('frontoffice.subscription.contract');
     Route::get('subscription/create','SubscriptionController@index')->middleware('hassubscription')->name('frontoffice.subscription.create');
     Route::post('subscription/checkout','SubscriptionController@checkout')->middleware('hassubscription')->name('frontoffice.subscription.checkout');
     Route::post('subscription/charge','SubscriptionController@charge')->middleware('hassubscription')->name('frontoffice.subscription.charge');

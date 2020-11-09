@@ -19,7 +19,12 @@ class SubscriptionMiddleware
         $user = Client::find(auth()->user()->id);
        // dd($user->subscription);
         if(!$user->subscription || !$user->subscription->status){
-            return redirect()->route('frontoffice.subscription.create');
+            if($user->contract){
+                return redirect()->route('frontoffice.subscription.create');
+            }else{
+                return redirect()->route('frontoffice.subscription.contract');
+            }
+
         }
         return $next($request);
     }

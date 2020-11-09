@@ -129,4 +129,9 @@ class SubscriptionController extends Controller
         }
         return response()->json(0,200);
     }
+
+
+    public function contract(){
+        return view('FrontOffice.pages.subscription.contract');
+    }
 }
