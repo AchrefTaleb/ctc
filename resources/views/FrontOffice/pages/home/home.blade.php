@@ -19,6 +19,34 @@
 
             </div>
             <hr/>
+    <div class="alert custom-alert-1 mb-4" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" data-dismiss="alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+        <div class="media">
+            <div class="alert-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg>
+            </div>
+            <div class="media-body">
+                <div class="alert-text">
+                    <p>
+                        <strong>  Étape 1: </strong>
+                        - Rendez-vous sur laposte.fr pour souscrire à votre contrat de réexpédition de courrier vers nos locaux.
+                        <strong> Étape 2 :</strong>
+                         rendez-vous sur votre espace client C.T.C, pour finaliser et activer votre compte en joignant :
+                        <ul>
+                        <li>contrat signé</li>
+                        <li>pièce d'identité</li>
+                        <li>justificatif de domicile</li>
+                    </ul>
+                        <strong class="danger" >ces étapes sont indispensables pour la validation de votre compte</strong>
+                    </p>
+                </div>
+                <div class="alert-btn">
+                    <button type="button" class="btn btn-default btn-dismiss">Accept</button>
+                </div>
+            </div>
+        </div>
+    </div>
+            <hr/>
             <div class="row widget-statistic">
 
 
