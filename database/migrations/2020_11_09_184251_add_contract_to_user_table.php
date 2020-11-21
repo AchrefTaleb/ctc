@@ -14,7 +14,7 @@ class AddContractToUserTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('contract')->default(false);
+            $table->date('contract_start')->default(false);
         });
     }
 
