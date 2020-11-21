@@ -30,13 +30,13 @@
                         <strong>  Étape 1: </strong><br>
                         - Rendez-vous sur laposte.fr pour souscrire à votre contrat de réexpédition de courrier vers nos locaux.<br>
                         <strong> Étape 2 :</strong><br>
-                         rendez-vous sur votre espace client C.T.C, pour finaliser et activer votre compte en joignant :<br>
+                         - rendez-vous sur votre espace client C.T.C, pour finaliser et activer votre compte en joignant :<br>
                         <ul style="margin-left: 30px;">
                         <li>contrat signé</li>
                         <li>pièce d'identité</li>
                         <li>justificatif de domicile</li>
                     </ul>
-                        <strong class="text-warning" >ces étapes sont indispensables pour la validation de votre compte</strong>
+                        <strong class="text-warning" >Ces étapes sont indispensables pour la validation de votre compte</strong>
                     </p>
                 </div>
 
