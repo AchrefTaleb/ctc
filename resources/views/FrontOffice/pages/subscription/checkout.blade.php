@@ -40,9 +40,9 @@
 
 
                         </div>
-                            <div class="form-group mb-3" style="display: flex;">
+                            <div class="form-group mb-3">
                                 <label> date début contrat</label>
-                                <input type="date" name="date_contract" v-model="contract_date" required>
+                                <input class="form-control" type="date" name="date_contract" v-model="contract_date" required>
                             </div>
                             <div class="form-group mb-3" style="display: flex;">
                                 <input type="checkbox" style="width: 55px;height: calc(1.0em + 0.75rem + 2px);" class="form-control @error('cgvu') is-invalid @enderror " name="cgvu" required>
