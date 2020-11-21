@@ -26,7 +26,7 @@
             </div>
             <div class="media-body">
                 <div class="alert-text">
-                    <p>
+                    <p  style="color: #fff">
                         <strong>  Étape 1: </strong><br>
                         - Rendez-vous sur laposte.fr pour souscrire à votre contrat de réexpédition de courrier vers nos locaux.<br>
                         <strong> Étape 2 :</strong><br>
