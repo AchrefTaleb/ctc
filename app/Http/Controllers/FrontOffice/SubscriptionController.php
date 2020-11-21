@@ -63,6 +63,7 @@ class SubscriptionController extends Controller
             'stripeToken' => "required",
             'plan' => "required",
             'cgvu' => "required",
+            'contract_date' => "required"
         ]);
         $promo = null;
         if($request->post('promo')){
@@ -100,7 +101,9 @@ class SubscriptionController extends Controller
                 $sub->status = 1;
 
                 $sub->save();
-
+                $user = auth()->user();
+                $user->contract_start = $request->post('date_contract');
+                $user->save();
                 return redirect()->route('frontoffice.home')->with('success','Inscription réussite!');
             }else{
 
