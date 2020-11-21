@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="row col-md-12 layout-top-spacing layout-spacing">
-        @if(false)
+        @if($client->status)
         <div style="text-align: center;" class="col-md-12 mb-5">
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
