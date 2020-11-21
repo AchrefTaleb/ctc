@@ -103,7 +103,7 @@ class ClientController extends Controller
 
         $user = User::findOrFail($request->post('id'));
 
-        $user->contract = true;
+        $user->status = 0;
 
         $user->save();
 
