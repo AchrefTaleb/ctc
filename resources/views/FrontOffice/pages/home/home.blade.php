@@ -19,6 +19,7 @@
 
             </div>
             <hr/>
+    @if(auth()->user()->status)
     <div class="alert custom-alert-1 mb-4" role="alert">
         <div class="media bg-danger">
             <div class="alert-icon mx-3 my-3">
@@ -43,6 +44,7 @@
             </div>
         </div>
     </div>
+    @endif
             <hr/>
             <div class="row widget-statistic">
 
