@@ -41,6 +41,10 @@
 
                         </div>
                             <div class="form-group mb-3" style="display: flex;">
+                                <label> date début contrat</label>
+                                <input type="date" name="date_contract" v-model="contract_date" required>
+                            </div>
+                            <div class="form-group mb-3" style="display: flex;">
                                 <input type="checkbox" style="width: 55px;height: calc(1.0em + 0.75rem + 2px);" class="form-control @error('cgvu') is-invalid @enderror " name="cgvu" required>
                                 <span class="wpcf7-list-item-label">En cochant cette case vous déclarez avoir pris connaissance et accepté les <a href="https://transfertdecourrier.com/informations/" target="_blank">Conditions Générales de Vente et d'Utilisation</a>.</span>
 
@@ -175,6 +179,7 @@
                 data: {
                     codePromo:'',
                     reduction:0,
+                    date_contract: '',
                         @if($option == 'm3')
                              price:{{ $plan->m3_price }}
                         @elseif($option == 'm6')
