@@ -399,8 +399,8 @@
                         </div>
                         <div class="form-group row ">
 
-                            <div class="col-md-6">
-                                <label for="captcha">Captcha</label>
+                            <div class="col-md-6" style="margin-left: 30%;">
+
                                 {!! NoCaptcha::renderJs() !!}
                                 {!! NoCaptcha::display() !!}
                                 <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
