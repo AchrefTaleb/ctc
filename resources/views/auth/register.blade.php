@@ -9,9 +9,12 @@
                     <div class="form-content">
 
                         <h1 class="">{{ __("S'inscrire") }} <a><span class="brand-name">Transfert de courrier</span></a></h1>
+                        @if($errors->has('recaptcha_token'))
+                            {{$errors->first('recaptcha_token')}}
+                        @endif
                     <form class="text-left" method="POST" action="{{ route('register') }}">
                         @csrf
-
+                        <input type="hidden" name="recaptcha_token" id="recaptcha_token">
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Prénom') }}</label>
 
@@ -394,6 +397,15 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <div class="form-group row ">
+
+                            <div class="col-md-6">
+                                <label for="captcha">Captcha</label>
+                                {!! NoCaptcha::renderJs() !!}
+                                {!! NoCaptcha::display() !!}
+                                <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                            </div>
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
@@ -412,5 +424,6 @@
             </div>
         </div>
     </div>
+
     </body>
 @endsection

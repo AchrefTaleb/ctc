@@ -76,7 +76,8 @@ class RegisterController extends Controller
             'postal_code' => ['required'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'phone' => 'required',
-            'last_name' => 'required'
+            'last_name' => 'required',
+            'g-recaptcha-response' => 'required',
         ]);
     }
 
